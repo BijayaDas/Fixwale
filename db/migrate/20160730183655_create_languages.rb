@@ -1,7 +1,7 @@
 class CreateLanguages < ActiveRecord::Migration[5.0]
   def change
     create_table :languages do |t|
-      t.integer :name #I have used Enum for this field
+      t.integer :title #I have used Enum for this field
       t.boolean :read
       t.boolean :write
       t.boolean :speak

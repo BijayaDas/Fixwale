@@ -4,18 +4,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+         
   has_many :authorizations
-  # has_and_belongs_to_many :skills
-  # has_and_belongs_to_many :roles
-
-  has_many :comments, dependent: :destroy
-  has_many :carts, dependent: :destroy
-  has_many :jobs, dependent: :destroy
-  has_many :service_providers, dependent: :destroy
+  has_many :enquiries, dependent: :destroy
+  has_many :providers, dependent: :destroy
   has_many :addresses, dependent: :destroy
-  has_many :bookings, dependent: :destroy
-  has_one :vendor, dependent: :destroy
-  # has_many :imageables, as: :image
+
   ratyrate_rater
 
   def full_name

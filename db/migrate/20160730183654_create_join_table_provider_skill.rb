@@ -4,7 +4,6 @@ class CreateJoinTableProviderSkill < ActiveRecord::Migration[5.0]
       t.decimal :experience, :precision => 2 #in years
       t.references :service_provider
       t.references :skill
-
     end
   end
 end

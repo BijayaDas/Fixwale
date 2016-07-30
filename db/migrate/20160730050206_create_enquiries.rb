@@ -1,8 +1,8 @@
 class CreateEnquiries < ActiveRecord::Migration[5.0]
   def change
     create_table :enquiries do |t|
-	  t.string :title
-	  t.string :budget
+      t.string :title
+      t.string :budget
       t.text :job_description
       t.string :mobile
       t.string :email
