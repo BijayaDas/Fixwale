@@ -4385,7 +4385,7 @@ a.cke_button_off:hover, .cke_hc a.cke_button_off:focus, .cke_hc a.cke_button_off
     background-color: transparent;
     min-height: 92px;
     width: auto;
-    background-image: url("../images/login-logo.png");
+    background-image: url("/assets/login-logo.png");
     background-position: center top;
     background-repeat: no-repeat;
     text-indent: -9999px;
@@ -7105,16 +7105,16 @@ border-left: 3px solid transparent;
 ----------------------------------------------------------*/
 
 .page-topbar .logo-area {
-    background-image: url('../images/logo.png');
+    background-image: url('/assets/logo.png');
     background-repeat: no-repeat;
 }
 .page-topbar.sidebar_shift .logo-area {
-    background-image: url('../images/logo-folded.png');
+    background-image: url('/assets/logo-folded.png');
     background-repeat: no-repeat;
     background-position: right top;
 }
 .page-topbar.chat_shift .logo-area {
-    background-image: url('../images/logo-folded.png');
+    background-image: url('/assets/logo-folded.png');
     background-repeat: no-repeat;
     background-position: right top;
 }

@@ -1,2 +1,0 @@
-class Government < ApplicationRecord
-end

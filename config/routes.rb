@@ -1,22 +1,12 @@
 Rails.application.routes.draw do
 
 
-  resources :portfolios
+  resources :categories
+  resources :providers
   resources :enquiries
   resources :replies
-  resources :hospitals
-  resources :governments
-  resources :companies
-  resources :universities
-  resources :products
-  resources :musics
-  resources :movies
-  resources :celebrities
-  resources :job_applications
-  resources :jobs
   # resources :languages
   resources :messages, only: [:new, :create]
-  resources :carts
   post '/rate' => 'rater#create', :as => 'rate'
   # resources :payments
   resources :bookings do
@@ -28,7 +18,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   resources :comments, only: [:create]
-  resources :service_providers
   # resources :addresses
   # resources :roles
   resources :domains, only: [:show]

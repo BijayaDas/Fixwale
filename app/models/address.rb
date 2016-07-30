@@ -1,10 +1,10 @@
-class Address < ActiveRecord::Base
+class Address < ApplicationRecord
 
 	belongs_to :user
-	# belongs_to :location
-	has_many :bookings
+	belongs_to :provider
+	belongs_to :enquiry
 
-	validates :street1, :street2, :city, :state, :pincode, :mobile, :user_id, :country, :presence => true
+	validates :street1, :city, :state, :pincode, :mobile, :user_id, :country, :presence => true
 
 	enum address_type: [ :residentioal, :office, :commercial ]
 	# before_save :save_address_details

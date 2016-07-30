@@ -1,4 +1,4 @@
-class Skill < ActiveRecord::Base
+class Skill < ApplicationRecord
 
 	# has_many :service_providers_skills
 	# has_many :service_providers, through: :service_providers_skills

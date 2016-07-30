@@ -47,7 +47,7 @@ gem 'prawn'
 # gem 'ransack'
 gem "paranoia"
 # gem 'ajaxful_rating'
-gem 'less-rails'
+# gem 'less-rails'
 gem "therubyracer"
 gem "jquery-turbolinks"
 # gem 'geocoder'
@@ -55,8 +55,8 @@ gem "jquery-turbolinks"
 gem 'country_select'
 gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'ratyrate'
-gem "mini_magick"
-gem 'fog'
+# gem "mini_magick"
+# gem 'fog'
 gem 'passenger'
 # gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 # gem "twitter-bootstrap-rails"

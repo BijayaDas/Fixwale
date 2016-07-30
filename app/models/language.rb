@@ -1,4 +1,4 @@
-class Language < ActiveRecord::Base
+class Language < ApplicationRecord
   belongs_to :service_providers
 
 	enum name: [ :english, :hindi, :oriya, :kannada, :tamil, :telugu, :malayalam, :gujrati, :bengali ]

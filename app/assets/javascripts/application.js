@@ -13,11 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
 
-//= require themes/jquery-1.11.2.min
 //= require themes/jquery.easing.min
 //= require plugins/bootstrap/js/bootstrap.min
 //= require plugins/pace/pace.min
 //= require plugins/perfect-scrollbar/perfect-scrollbar.min
 //= require plugins/viewport/viewportchecker
+
+//= require plugins/datepicker/js/datepicker
+//= require plugins/autosize/autosize.min
+//= require plugins/inputmask/min/jquery.inputmask.bundle.min
+
 //= require themes/scripts

@@ -9,7 +9,7 @@ class Ability
         can :manage, :all
       elsif user.recruiter
         can :read, :all
-      elsif user.service_provider
+      elsif user.provider
         can :read, :all    
       end
     #

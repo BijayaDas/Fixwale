@@ -1,5 +1,5 @@
-class Message < ActiveRecord::Base
+class Message < ApplicationRecord
 
-  	validates :name, :email, :mobile, :description, :presence => true
+  	validates :full_name, :email, :mobile, :description, :presence => true
 	
 end

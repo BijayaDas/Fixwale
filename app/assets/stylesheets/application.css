@@ -16,5 +16,10 @@
  *= require plugins/font-awesome/css/font-awesome
  *= require themes/animate.min
  *= require plugins/perfect-scrollbar/perfect-scrollbar
+
+ *= require plugins/datepicker/css/datepicker
+
+ *= require themes/style
+ *= require themes/responsive
  *= require_self
  */

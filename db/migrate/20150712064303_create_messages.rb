@@ -1,10 +1,10 @@
-class CreateMessages < ActiveRecord::Migration
+class CreateMessages < ActiveRecord::Migration[5.0]
   def change
     create_table :messages do |t|
-	  t.integer :parent_id
-	  t.text :content
-	  t.references :user, index: :true
-	  t.references :service_provider, index: :true
+	  t.string :full_name
+	  t.string :email
+	  t.string :mobile
+	  t.text :description
       t.timestamps
     end
   end

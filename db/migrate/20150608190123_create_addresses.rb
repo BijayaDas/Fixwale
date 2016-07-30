@@ -1,8 +1,7 @@
-class CreateAddresses < ActiveRecord::Migration
+class CreateAddresses < ActiveRecord::Migration[5.0]
   def change
     create_table :addresses do |t|
     	t.string :street1
-    	t.string :street2
     	t.string :city
       t.string :state
     	t.string :country
@@ -11,7 +10,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.integer :mobile, limit: 5
       t.integer :telephone, limit: 5
       t.references :user, index: :true
-    	t.references :service_provider, index: :true
+    	t.references :provider, index: :true
     	t.timestamps
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730050327) do
+ActiveRecord::Schema.define(version: 20160730050139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,11 +127,6 @@ ActiveRecord::Schema.define(version: 20160730050327) do
     t.datetime "updated_at"
   end
 
-  create_table "enquiries", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "governments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -218,11 +213,6 @@ ActiveRecord::Schema.define(version: 20160730050327) do
     t.datetime "updated_at"
     t.string   "avatar"
     t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id", using: :btree
-  end
-
-  create_table "portfolios", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "prices", force: :cascade do |t|
