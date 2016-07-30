@@ -1,8 +1,8 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',
-    :aws_access_key_id      => ENV['aws_id'],
-    :aws_secret_access_key  => ENV['aws_key'],
+    :aws_access_key_id      => 'compromise', #ENV['AWS_ID'],
+    :aws_secret_access_key  => 'compromise',#ENV['AWS_KEY'],
     :region                 => 'ap-southeast-1'
   }
   config.fog_directory  = 'fixwale-web-contents'

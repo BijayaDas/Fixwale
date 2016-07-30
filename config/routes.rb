@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
 
 
+  resources :portfolios
+  resources :enquiries
+  resources :replies
+  resources :hospitals
+  resources :governments
+  resources :companies
+  resources :universities
+  resources :products
+  resources :musics
+  resources :movies
+  resources :celebrities
   resources :job_applications
   resources :jobs
   # resources :languages

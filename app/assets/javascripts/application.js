@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
+//= require themes/jquery-1.11.2.min
+//= require themes/jquery.easing.min
+//= require plugins/bootstrap/js/bootstrap.min
+//= require plugins/pace/pace.min
+//= require plugins/perfect-scrollbar/perfect-scrollbar.min
+//= require plugins/viewport/viewportchecker
+//= require themes/scripts

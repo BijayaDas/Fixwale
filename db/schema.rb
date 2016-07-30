@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609155228) do
+ActiveRecord::Schema.define(version: 20160730050327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,12 +100,22 @@ ActiveRecord::Schema.define(version: 20160609155228) do
     t.integer "service_provider_id"
   end
 
+  create_table "celebrities", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer  "service_provider_id"
     t.integer  "user_id"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "domains", force: :cascade do |t|
@@ -115,6 +125,23 @@ ActiveRecord::Schema.define(version: 20160609155228) do
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "enquiries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "governments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hospitals", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_hospitals_on_user_id", using: :btree
   end
 
   create_table "job_applications", force: :cascade do |t|
@@ -165,6 +192,16 @@ ActiveRecord::Schema.define(version: 20160609155228) do
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
+  create_table "movies", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "musics", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "overall_averages", force: :cascade do |t|
     t.string   "rateable_type"
     t.integer  "rateable_id"
@@ -183,6 +220,11 @@ ActiveRecord::Schema.define(version: 20160609155228) do
     t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id", using: :btree
   end
 
+  create_table "portfolios", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "prices", force: :cascade do |t|
     t.integer  "amount"
     t.integer  "price_type",          limit: 2, default: 0
@@ -190,6 +232,11 @@ ActiveRecord::Schema.define(version: 20160609155228) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["service_provider_id"], name: "index_prices_on_service_provider_id", using: :btree
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rates", force: :cascade do |t|
@@ -213,6 +260,11 @@ ActiveRecord::Schema.define(version: 20160609155228) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "roles_users", id: false, force: :cascade do |t|
@@ -291,6 +343,11 @@ ActiveRecord::Schema.define(version: 20160609155228) do
     t.text   "description"
     t.string "icon"
     t.string "hash_tag"
+  end
+
+  create_table "universities", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
