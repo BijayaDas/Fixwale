@@ -1,0 +1,152 @@
+
+<section>
+    <div class="second-page-container">
+        <div class="block">
+            <div class="container">
+                <div class="header-for-light">
+                    <h1 class="wow fadeInRight animated" data-wow-duration="1s">Create new <span>Account</span></h1>
+                </div>
+                <div class="row">
+                    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="block-form box-border wow fadeInLeft animated" data-wow-duration="1s">
+                            <h3><i class="fa fa-user"></i>Personal Information</h3>
+                            <hr>
+                            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
+                                <%= f.error_notification %>
+
+                                <div class="form-group">
+                                    <label for="inputFirstName" class="col-sm-3 control-label">First Name:<span class="text-error">*</span></label>
+                                    <div class="col-sm-9">
+                                    <%= f.input_field :first_name, required: true, autofocus: true, class: 'form-control' %>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputLastName" class="col-sm-3 control-label">Last Name:<span class="text-error">*</span></label>
+                                    <div class="col-sm-9">
+                                    <%= f.input_field :last_name, required: true, autofocus: true, class: 'form-control' %>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEMail" class="col-sm-3 control-label">E-Mail:<span class="text-error">*</span></label>
+                                    <div class="col-sm-9">
+                                        <%= f.input_field :email, required: true, autofocus: true, class: 'form-control' %>
+                                    </div>
+                                </div>
+
+                                <h3><i class="fa fa-lock"></i>Password</h3>
+                                <hr>
+                                <div class="form-group">
+                                    <label for="inputPassword1" class="col-sm-3 control-label">Password: <span class="text-error">*</span></label>
+                                    <div class="col-sm-9">
+                                    <%= f.input_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: 'form-control' %>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword2" class="col-sm-3 control-label">Re-Password: <span class="text-error">*</span></label>
+                                    <div class="col-sm-9">
+                                    <%= f.input_field :password_confirmation, required: true, class: 'form-control' %>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="role" class="col-sm-3 control-label">Role: <span class="text-error">*</span></label>
+                                    <div class="col-sm-9">
+                                    <%= f.collection_select :role, User.roles.keys, :to_s, :humanize, {}, {class: "form-control"} %>
+                                    <%#= f.collection_select :role, User.roles.map { |k, v| [k, k.humanize]}, {class: "form-control"} %>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="agree">  I'v read and agreed on <a href="#">Terms & Conditions</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <%= f.button :submit, "Register", class: "btn-default-1" %>
+                                    </div>
+                                </div>
+                            <% end %>
+
+                        </div>
+                    </article>
+<!--                     <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+                        <div class="block-form box-border wow fadeInRight animated" data-wow-duration="1s">
+                            <h3><i class="fa fa-check"></i>Conditions</h3>
+                            <hr>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <blockquote>
+                                <p>
+                                    <abbr title="HyperText Markup Language Curabitur pretium tincidunt lacus. Nulla gravida orci a odio." class="initialism">HTML</abbr>
+                                    Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.
+                                </p>
+                            </blockquote>
+                            <p>
+                                Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit semper bibendum libero.
+                            </p>
+
+
+                            <a href="#" class="btn-default-1">Read more</a>
+                        </div>
+
+                    </article>
+                </div> -->
+            </div>
+        </div>
+    </div> 
+</section>
+
+
+
+<script type="text/javascript">
+// jQuery.validator.setDefaults({
+//   debug: true,
+//   success: "valid"
+// });
+    
+    $("#new_user").validate({
+                rules: {
+                    "user[first_name]": "required",
+                    "user[last_name]": "required",
+                    "user[email]": {
+                        required: true,
+                        email: true
+                    },
+                    "user[password]": {
+                        required: true,
+                        minlength: 6
+                    },
+                    "user[password_confirmation]": {
+                        required: true,
+                        minlength: 6,
+                        equalTo: "#user_password"
+                    },
+                    agree: "required"
+                },
+                messages: {
+                    "user[first_name]": "Please enter your firstname",
+                    "user[last_name]": "Please enter your lastname",
+                    "user[password]": {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 5 characters long"
+                    },
+                    "user[password_confirmation]": {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 5 characters long",
+                        equalTo: "Confirm password should be same as password"
+                    },
+                    "user[email]": "Please enter a valid email address",
+                    agree: "Please accept our policy"
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });
+
+</script>

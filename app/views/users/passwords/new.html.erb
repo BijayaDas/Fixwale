@@ -1,0 +1,36 @@
+
+<section>
+    <div class="second-page-container">
+        <div class="block">
+            <div class="container">
+                <div class="header-for-light">
+                    <h1 class="wow fadeInRight animated" data-wow-duration="1s">Change <span>Password</span></h1>
+                </div>
+                <div class="row">
+                    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="block-form box-border wow fadeInLeft animated" data-wow-duration="1s">
+                            <h3> <i class="fa fa-unlock-alt"></i>Need to change your password?</h3>
+							<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+							  <%= f.error_notification %>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                     <%= f.input :email, required: true, autofocus: true %>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <hr>
+                                        <%= f.button :submit, "Retrieve Password", class: "btn-default-1" %>
+                                    </div>
+                                    <div class="col-md-12">
+<%= render "users/shared/links" %>
+                                    
+                                    </div>
+                                </div>                                    
+							<% end %>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>

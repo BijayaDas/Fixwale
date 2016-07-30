@@ -1,0 +1,174 @@
+        <section>
+            <div class="second-page-container">
+                <div class="block">
+                    <div class="container">
+                        <div class="header-for-light">
+                            <h1 class="wow fadeInRight animated" data-wow-duration="1s">Booking <span>Detail</span></h1>
+                        </div>
+                        <div class="row">
+                            <article class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                                <div class="box-border wow fadeInLeft" data-wow-duration="1s">
+                                    <h3><i class="fa fa-tasks"></i> Service Provider Detail
+                                    <p class="pull-right" style="text-decoration: line-through;"><%= link_to_if(@booking.status == "booked" , 'cancel', cancel_booking_path(@booking.id), class: "btn btn-danger") %></p>
+                                    </h3>
+                                    <hr>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>SP#ID</th>
+                                                    <th>Name</th>
+                                                    <th>Domain</th>
+                                                    <th>Location</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>#<%= @booking.service_provider.id %></td>
+
+                                                    <td>
+                                                        <%= @booking.service_provider.name %></td>
+                                                        <td><%= @booking.service_provider.domain.name %></td>
+                                                    <td><%= @booking.service_provider.address.city rescue nil %>
+                                                        <%= @booking.service_provider.address.state rescue nil %>,<br/>
+                                                        Pincode: <%= @booking.service_provider.address.pincode rescue nil %>,<br/>
+                                                        Tel: <%= @booking.service_provider.address.mobile rescue nil %>
+                                                    </td>
+
+                                                    <td>
+                                                        <%= link_to "view", service_provider_path(@booking.service_provider.id), style: "color: #000", class: "btn btn-success" %></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                                <div class="box-border wow fadeInLeft" data-wow-duration="1s">
+                                    <h3><i class="fa fa-tasks"></i> Booking Details
+                                    <% if current_user.service_providers.ids.include? @booking.service_provider_id %>
+                                        <p class="pull-right"><%= best_in_place @booking, :status, :as => :select, :collection => Booking.statuses.map {|k, v| [k, k.humanize]} , tabindex: "1" %></p>
+                                    <% end %>
+                                    </h3>
+                                    <hr>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Booking#ID</th>
+
+                                                    <th>
+                                                        Start Date</th>
+
+                                                    <th>Reporting Time(24 Hrs)</th>
+
+                                                    <th>Hours</th>
+
+                                                    <th>
+                                                        Mobile</th>
+                                                      <th>  Placed On</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td><%= @booking.id %></td>
+
+                                                    <td>
+                                                        <%= Date.parse(@booking.start_date.to_s) %></td>
+
+                                                    <td><%= @booking.reporting_time %> Hrs</td>
+
+                                                    <td><%= @booking.hours rescue "NA" %></td>
+
+                                                    <td >
+                                                        <%= @booking.address.mobile rescue "NA" %>
+                                                        </td>
+                                                        <td >
+                                                        <%= Date.parse(@booking.created_at.to_s) %>
+                                                        </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-left">
+                                                        <%= truncate(@booking.description , :length => 100, :omission => '... (continued)') %>
+                                                        </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </article>
+                            <article class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <div class="block-order-total box-border wow fadeInRight" data-wow-duration="1s">
+                                    <h3><i class="fa fa-dollar"></i> Total</h3>
+                                    <hr>
+                                    <ul class="list-unstyled">
+                                      <!--   <li>Date: <strong><%#= @booking.start_date %></strong></li> -->
+                                        <li>Hours: <strong><%= @booking.hours > 0 ? @booking.hours : "NA" rescue "NA" %></strong></li>
+                                       <!--  <li>Charges: <strong><%#= @booking.payment.price %></strong></li>
+                                        <li>Additional: <strong>0</strong></li> -->
+                                        <li class="color-active">Total : <strong>&#8377; <%= @booking.total_amount %></strong></li>                                    
+                                    </ul>
+
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <div class="block-order-total box-border wow fadeInRight" data-wow-duration="1s">
+                                    <h3><i class="fa fa-home"></i> Address</h3>
+                                    <hr>
+                                    <ul class="list-unstyled">
+                                        <li>Street1: <strong><%= @booking.address.street1 %></strong></li>
+                                        <li>Street2: <strong><%= @booking.address.street2 %></strong></li>
+                                        <li>City:    <strong><%= @booking.address.city %></strong></li>
+                                        <li>Pincode: <strong><%= @booking.address.pincode %></strong></li>
+                                        <li>Mobile:  <strong><%= @booking.address.mobile %></strong></li>
+                                        <li>State:   <strong><%= @booking.address.state %></strong></li>
+                                    </ul>
+
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </div> 
+        </section>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+      /* Activating Best In Place */
+      jQuery(".best_in_place").best_in_place();
+    });
+</script>
+<style type="text/css">
+    .best_in_place {
+       border: 5px solid;
+    background: #eb2c33;
+    border-color: #eb2c33;
+    color: #fff;
+    padding: 4px 10px 4px 10px;
+    border-radius: 18px;
+    font-size: larger;
+    font-weight: 900;
+}
+
+.best_in_place:hover {
+  /*background-color:#eeeeee;*/
+}
+</style>

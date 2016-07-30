@@ -1,0 +1,59 @@
+<section>
+    <div class="second-page-container">
+        <div class="block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block-breadcrumb">
+                            <ul class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Pages</a></li>
+                                <li class="active">Job Details</li>
+                            </ul>
+                        </div>
+                        <div class="header-for-light">
+                            <h1 class="wow fadeInRight animated" data-wow-duration="1s"> <span>job description</span> </h1>
+                        </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 table-responsive">
+                                    <table class="table">
+                                        <tr>
+                                          <td>Headline</td>
+                                          <td><%= @job.headline %></td>
+                                          <td><%= link_to "Apply", edit_job_application_path(@job.id), class: "btn-right-post" %></td>
+                                        </tr>
+                                        <tr>
+                                          <td>Description</td>
+                                          <td><%= @job.job_description %></td>
+                                          <td></td>
+                                        </tr>
+                                        <tr>
+                                          <td>Contact</td>
+                                          <td><%= @job.contact_details %></td>
+                                          <td></td>
+                                        </tr>
+                                        <tr>
+                                          <td>Max Applications</td>
+                                          <td><%= @job.max_applications %></td>
+                                          <td></td>
+                                        </tr>
+                                        <tr>
+                                          <td>Expiry Date</td>
+                                          <td><%= @job.expiration_date %></td>
+                                          <td></td>
+                                        </tr>
+                                        <tr>
+                                          <td>Status</td>
+                                          <td><%= "open - to be imp" %></td>
+                                          <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>        
+

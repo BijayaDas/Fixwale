@@ -1,0 +1,81 @@
+<section>
+    <div class="second-page-container">
+        <div class="block">
+            <div class="container">
+                <div class="header-for-light">
+                    <h1 class="wow fadeInRight animated" data-wow-duration="1s"> <span>Booking History</span></h1>
+                </div>
+                <div class="row">
+                    <article class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                        <div class="box-border wow fadeInLeft" data-wow-duration="1s">
+                            <h3><i class="fa fa-tasks"></i> History</h3>
+                            <hr>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Bookin
+                                                no.</th>
+
+                                            <th>Booking
+                                                date</th>
+
+                                            <th>Reporting Time</th>
+
+                                            <th>Total Amount</th>
+
+                                            <th>
+                                                Status</th>
+
+                                            <th>
+                                                &nbsp;</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <% @bookings.each do |book| %>
+                                            <tr>
+                                                <td><%= book.id %></td>
+
+                                                <td>
+                                                    <%= book.start_date %></td>
+
+                                                <td>
+                                                    <span><%= book.reporting_time %></span></td>
+
+                                                <td>
+                                            Rs <%= book.total_amount %></td>
+
+                                                <td>
+                                                    <span class="label new"><%= book.status %></span></td>
+
+                                                <td class=
+                                                    "text-right">
+<%= link_to 'View &nbsp;<i class="fa fa-angle-right"></i>'.html_safe , booking_path(book.id), class: "btn btn-mini"  %> 
+                                                   
+                                                </td>
+                                            </tr>
+                                        <% end %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                        <div class="block-order-total box-border wow fadeInRight" data-wow-duration="1s">
+                            <h3><i class="fa fa-dollar"></i> Total</h3>
+                            <hr>
+                            <ul class="list-unstyled">
+                                <li>Customer since: <strong><%= @bookings.first.user.created_at rescue nil %></strong></li>
+                                <li>Total Bookings: <strong><%= @bookings.count rescue nil %></strong></li>
+                                <li class="color-active">Total spend: <strong>Rs <%= @bookings.sum(:total_amount) rescue nil %></strong></li>                                    
+                            </ul>
+
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </div> 
+</section>

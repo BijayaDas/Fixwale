@@ -1,0 +1,119 @@
+<section>
+    <div class="second-page-container">
+        <div class="block-breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">jobs</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <div class="header-for-light">
+                    <h1 class="wow fadeInRight animated" data-wow-duration="1s"><span>POST NEW JOB</span></h1>
+                </div>
+                <div class="row">
+                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="block-form box-border wow fadeInLeft animated" data-wow-duration="1s">
+                        	<%= simple_form_for(@job) do |f| %>
+								<%= f.error_notification %>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="description" class="control-label">Category:</label>
+                                            <div>
+                                            <%= f.association :domain, :collection => @domains, label: false, wrapper: false, :include_blank => false, class: 'form-control' %>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="description" class="control-label">Headline:</label>
+                                            <div>
+                                            <%= f.input_field :headline, class: "form-control" %>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="description" class="control-label">Job Description:</label>
+                                            <div>
+                                            <%= f.input_field :job_description, class: "form-control" %>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="description" class="control-label">Contact Details:</label>
+                                            <div>
+                                            <%= f.input_field :contact_details, class: "form-control" %>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="description" class="control-label">Expiration date:</label>
+                                            <div>
+                                            <%= f.text_field :expiration_date, id: 'datepicker', readonly: true, class: "form-control" %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="description" class="control-label">Max Applications:</label>
+                                            <div>
+                                            <%= f.input_field :max_applications, class: "form-control" %>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <hr/>
+								<%= f.button :submit, 'POST', class: "btn-default-1" %>
+							<% end %>
+
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+
+<script type="text/javascript">
+
+    var d = new Date(),
+        month = '' + (d.getMonth() + 1),
+        day = '' + (d.getDate() + 1),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+    var date_from = [year, month, day].join('/');
+
+    $(function () {
+        $('#datepicker').datepicker({
+            format: 'yyyy/mm/dd',
+            startDate: date_from,
+            // endDate: '2015/12/31',
+            autoclose: 1,
+            todayHighlight: 1
+        });
+        // $('#cart_reporting_time_5i').remove();
+    });
+</script>

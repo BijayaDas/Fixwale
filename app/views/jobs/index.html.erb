@@ -1,0 +1,59 @@
+<section>
+    <div class="second-page-container">
+        <div class="block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block-breadcrumb">
+                            <ul class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Pages</a></li>
+                                <li class="active">Jobs list</li>
+                            </ul>
+                        </div>
+                        <div class="header-for-light">
+                            <h1 class="wow fadeInRight animated" data-wow-duration="1s"> <span>jobs listing</span> </h1>
+                        </div>
+                        <% @jobs.each do |job| %>
+                            <article class="product list">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="product-caption">
+                                            <div class="block-name">
+                                                <p class="product-name"><%= job.headline %></p>
+                                                Valid till <%= job.expiration_date %>
+                                               <!--  <p class="product-price"><span>$330</span> </p> -->
+
+                                            </div>
+
+                                            <div class="product-rating">
+                                                  <%= "Applications = " + job.max_applications.to_s %>
+                                            </div>
+                                            <p class="description">
+                                                <%= truncate job.job_description, length: 250 %>
+                                            </p>
+                                            <div class="product-cart">
+                                            <%= link_to(job, method: :delete, data: { confirm: 'Are you sure?' }) do %>
+                                                <i class="fa fa-trash-o"></i> Delete
+                                            <% end %>
+                                            <%= link_to edit_job_path(job) do %>
+                                                <i class="fa fa-pencil-square-o"></i> Edit
+                                            <% end %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        <% end %>
+                        <div class="block-pagination">
+                            <ul class="pagination">
+                               <%= (will_paginate @jobs, renderer: BootstrapPagination::Rails) unless @jobs.blank? %>
+                            </ul>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>        
+

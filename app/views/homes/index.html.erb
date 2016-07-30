@@ -1,0 +1,29 @@
+<section>
+  <div class="second-page-container">
+    <div class="block-breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="active">Home</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="container">
+      <!--   <div class="header-for-light">
+          <h1 class="wow fadeInRight animated" data-wow-duration="1s"><span>POST NEW JOB</span></h1>
+        </div> -->
+        <% if !current_user.nil? %>
+          <% if current_user.service_provider? %>
+            <%= render 'sp_dashboard' %>
+          <% elsif current_user.recruiter? %>
+            <%= render 'rc_dashboard' %>
+          <% elsif current_user.recruiter? %>
+            <%= render 'rc_dashboard' %>
+          <% end %>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</section>

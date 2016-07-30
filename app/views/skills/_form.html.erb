@@ -1,0 +1,15 @@
+<%= simple_form_for(@skill) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    Skill Name: <%= f.text_field :name %>
+  </div> 
+   <div class="form-inputs">
+    Description: <%= f.text_field :description %>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

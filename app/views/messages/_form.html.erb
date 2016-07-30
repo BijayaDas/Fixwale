@@ -1,0 +1,79 @@
+<section>
+    <div class="second-page-container">
+        <div class="block-breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <div class="header-for-light">
+                    <h1 class="wow fadeInRight animated" data-wow-duration="1s"><span>Contact</span> Information </h1>
+                </div>
+                <div class="row">
+                    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="block-form box-border wow fadeInLeft animated" data-wow-duration="1s">
+                            <h3><i class="fa fa-thumb-tack"></i>Our Address</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.                                    </p>
+                            <hr>
+                            <h3><i class="fa fa-envelope-o"></i>Send Message</h3>
+                            <div>
+                                <div>
+                                	<%= simple_form_for(@message) do |f| %>
+										<%= f.error_notification %>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="name" class="control-label">Name:</label>
+                                                    <div>
+                                                        <%= current_user.full_name() rescue "NA" %>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="mobile" class="control-label">Email:</label>
+                                                    <div>
+                                                        <%= current_user.email %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="description" class="control-label">Message:</label>
+                                                    <div>
+                                                    <%= f.text_area :content, class: "form-control" %>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <hr>
+    									<%= f.button :submit, 'SEND', class: "btn-default-1" %>
+									<% end %>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="block-form box-border wow fadeInRight animated" data-wow-duration="1s">
+                            <h3> <i class="fa fa-adn"></i>Map</h3>
+                            <hr>
+                            <div class="google-map">
+                                <iframe src="https://www.google.com/maps/embed/v1/place?q=Bangalore,+Karnataka,+India&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" style="overflow:hidden;height:100%;width:100%;" frameborder="0" ></iframe>
+                            </div>
+
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>

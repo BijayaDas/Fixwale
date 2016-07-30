@@ -1,0 +1,111 @@
+<section>
+    <div class="second-page-container">
+        <div class="block-breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">jobs</li>
+                    <li class="active">application</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <div class="header-for-light">
+                    <h1 class="wow fadeInRight animated" data-wow-duration="1s"><span>JOB APPLICATION</span></h1>
+                </div>
+                <div class="row">
+                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="block-form box-border wow fadeInLeft animated" data-wow-duration="1s">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="col-md-2">JobID:</div>
+                                            <div class="col-md-3">
+                                            <p >#<%= @job_application.job.id %></p>
+                                            </div>
+                                            <div class="col-md-3">
+                                            Satus:(click to change status)
+                                            </div>
+                                            <div class="col-md-3"> 
+<%= best_in_place @job_application, :status, :as => :select, :collection => JobApplication.statuses.map {|k, v| [k, k]} , tabindex: "1" %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="col-md-2">Job Headline:</div>
+                                            <div class="col-md-7">
+                                            <p ><%= @job_application.job.headline %></p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="col-md-2">Service Provider:</div>
+                                            <div class="col-md-7">
+                                            <p><%= link_to @job_application.service_provider.name, service_provider_path(@job_application.service_provider.id) %></p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="col-md-2">expected salary:</div>
+                                            <div class="col-md-7">
+                                            <p ><%= @job_application.expected_amount %></p>
+
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="col-md-2">cover_letter:</div>
+                                            <div class="col-md-7">
+                                            <p ><%= @job_application.cover_letter %></p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+      /* Activating Best In Place */
+      jQuery(".best_in_place").best_in_place();
+    });
+</script>
+<style type="text/css">
+    .best_in_place {
+       border: 5px solid;
+    background: #eb2c33;
+    border-color: #eb2c33;
+    color: #fff;
+    padding: 4px 10px 4px 10px;
+    border-radius: 18px;
+    font-size: larger;
+    font-weight: 900;
+}
+
+.best_in_place:hover {
+  /*background-color:#eeeeee;*/
+}
+</style>

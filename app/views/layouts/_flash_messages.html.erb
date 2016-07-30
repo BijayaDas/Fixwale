@@ -1,0 +1,11 @@
+<% flash.each do |type, message| %>
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	            swal({
+	                title: "Alert",
+	                text: "<%= message %>"
+	            });
+	    });
+	</script>
+	<% flash.delete(type) %>
+<% end %>

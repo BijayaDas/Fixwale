@@ -1,0 +1,574 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sub",
+				"sub_category"
+			],
+			[
+				"product",
+				"product_id"
+			],
+			[
+				"prie",
+				"price_type"
+			],
+			[
+				"p",
+				"price"
+			],
+			[
+				"sui",
+				"suitable_time"
+			],
+			[
+				"min",
+				"minimum_charge"
+			],
+			[
+				"price",
+				"price_type"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"book",
+				"booking"
+			],
+			[
+				"na",
+				"name"
+			],
+			[
+				"th",
+				"th	Tag"
+			],
+			[
+				"serv",
+				"service_provider_id"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"ser",
+				"service_provider"
+			],
+			[
+				"booki",
+				"bookings"
+			],
+			[
+				"update",
+				"updated"
+			],
+			[
+				"addre",
+				"address"
+			],
+			[
+				"sr",
+				"script	Tag"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"st",
+				"style	Tag"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"ree",
+				"reference"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Biay/projects/wowswap/app/models/user.rb",
+		"/Users/Biay/projects/wowswap/app/controllers/products_controller.rb",
+		"/Users/Biay/projects/wowswap/app/views/sub_categories/index.html.erb",
+		"/Users/Biay/projects/wowswap/public/inspinia/sweetalert.html",
+		"/Users/Biay/projects/wowswap/app/assets/javascripts/application.js",
+		"/Users/Biay/projects/wowswap/app/assets/stylesheets/application.css",
+		"/Users/Biay/projects/wowswap/db/migrate/20150814212647_create_activities.rb",
+		"/Users/Biay/projects/wowswap/db/migrate/20150814212639_create_products.rb",
+		"/Users/Biay/projects/wowswap/db/migrate/20150814212641_create_sub_categories.rb",
+		"/Users/Biay/projects/wowswap/app/models/product.rb",
+		"/Users/Biay/projects/wowswap/app/views/products/index.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/homes/index.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/homes/new.html.erb",
+		"/Users/Biay/projects/wowswap/app/controllers/homes_controller.rb",
+		"/Users/Biay/projects/wowswap/app/views/homes/product_search.html.erb",
+		"/Users/Biay/projects/wowswap/public/500.html",
+		"/Users/Biay/projects/wowswap/app/controllers/application_controller.rb",
+		"/Users/Biay/projects/wowswap/app/views/products/edit.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/products/show.html.erb",
+		"/Users/Biay/projects/wowswap/Gemfile",
+		"/Users/Biay/projects/wowswap/bin/rails",
+		"/Users/Biay/projects/wowswap/bin/bundle",
+		"/Users/Biay/projects/wowswap/bin/rake",
+		"/Users/Biay/projects/wowswap/Rakefile",
+		"/Users/Biay/projects/wowswap/solr/solr.xml",
+		"/Users/Biay/projects/wowswap/bin/setup",
+		"/Users/Biay/projects/wowswap/config.ru",
+		"/Users/Biay/projects/wowswap/config/sunspot.yml",
+		"/Users/Biay/projects/wowswap/config/routes.rb",
+		"/Users/Biay/projects/wowswap/app/views/sub_categories/show.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/products/new.html.erb",
+		"/Users/Biay/projects/wowswap/public/inspinia/form_basic.html",
+		"/Users/Biay/projects/wowswap/app/views/comments/index.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/layouts/application.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/layouts/_upper_footer.html.erb",
+		"/Users/Biay/projects/wowswap/public/inspinia/ecommerce_products_grid.html",
+		"/Users/Biay/projects/wowswap/public/inspinia/search_results.html",
+		"/Users/Biay/projects/wowswap/app/views/comments/new.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/layouts/_upper_header.html.erb",
+		"/Users/Biay/projects/wowswap/app/controllers/comments_controller.rb",
+		"/Users/Biay/projects/Front End Bootstrap Templates/templatecycle.com/tshop/v-1.4/gray/category.html",
+		"/Users/Biay/projects/wowswap/public/inspinia/ecommerce_product.html",
+		"/Users/Biay/projects/wowswap/public/inspinia/form_advanced.html",
+		"/Users/Biay/projects/wowswap/public/inspinia/ecommerce_product_list.html",
+		"/Users/Biay/projects/wowswap/public/inspinia/dashboard_4.html",
+		"/Users/Biay/projects/wowswap/app/views/layouts/_header.html.erb",
+		"/Users/Biay/projects/wowswap/public/inspinia/carousel.html",
+		"/Users/Biay/projects/wowswap/public/inspinia/project_detail.html",
+		"/Users/Biay/projects/wowswap/app/views/comments/_form.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/comments/edit.html.erb",
+		"/Users/Biay/projects/wowswap/db/migrate/20150814212646_create_comments.rb",
+		"/Users/Biay/projects/wowswap/app/models/comment.rb",
+		"/Users/Biay/projects/wowswap/app/helpers/homes_helper.rb",
+		"/Users/Biay/projects/wowswap/app/views/layouts/_footer.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/sub_categories/index.json.jbuilder",
+		"/Users/Biay/projects/wowswap/app/views/users/shared/_links.html.erb",
+		"/Users/Biay/projects/wowswap/app/controllers/sub_categories_controller.rb",
+		"/Users/Biay/projects/wowswap/app/views/categories/index.html.erb",
+		"/Users/Biay/projects/wowswap/app/assets/stylesheets/font-awesome.css",
+		"/Users/Biay/projects/wowswap/app/assets/stylesheets/style.css",
+		"/Users/Biay/projects/wowswap/app/assets/stylesheets/toastr.min.css",
+		"/Users/Biay/projects/wowswap/app/assets/javascripts/pace.min.js",
+		"/Users/Biay/projects/wowswap/app/assets/javascripts/jquery.metisMenu.js",
+		"/Users/Biay/projects/wowswap/app/assets/javascripts/inspinia.js",
+		"/Users/Biay/projects/wowswap/app/views/products/index.json.jbuilder",
+		"/Users/Biay/projects/wowswap/app/views/homes/index.json.jbuilder",
+		"/Users/Biay/projects/wowswap/public/inspinia/register.html",
+		"/Users/Biay/projects/wowswap/public/inspinia/validation.html",
+		"/Users/Biay/projects/wowswap/app/helpers/application_helper.rb",
+		"/Users/Biay/projects/wowswap/app/assets/stylesheets/bootstrap.min.css",
+		"/Users/Biay/projects/wowswap/app/views/layouts/_flash_messages.html.erb",
+		"/Users/Biay/projects/fixwale_seller/people_net/app/helpers/application_helper.rb",
+		"/Users/Biay/projects/fixwale_seller/people_net/app/views/layouts/_flash_messages.html.erb",
+		"/Users/Biay/projects/fixwale_seller/people_net/app/views/layouts/application.html.erb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/helpers/application_helper.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/views/layouts/application.html.erb",
+		"/Users/Biay/projects/fixwale_seller/people_net/config/application.rb",
+		"/Users/Biay/projects/wowswap/app/views/users/registrations/new.html.erb",
+		"/Users/Biay/projects/wowswap/public/inspinia/forgot_password.html",
+		"/Users/Biay/projects/wowswap/app/views/users/passwords/new.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/users/passwords/edit.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/admin/sessions/new.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/users/sessions/new.html.erb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/views/users/sessions/new.html.erb",
+		"/Users/Biay/projects/wowswap/public/inspinia/login.html",
+		"/Users/Biay/projects/wowswap/config/initializers/devise.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/assets/stylesheets/application.css",
+		"/Users/Biay/projects/wowswap/app/views/products/_form.html.erb",
+		"/Users/Biay/projects/wowswap/app/controllers/locations_controller.rb",
+		"/Users/Biay/projects/wowswap/app/models/location.rb",
+		"/Users/Biay/projects/wowswap/db/migrate/20150814212643_create_locations.rb",
+		"/Users/Biay/projects/wowswap/app/views/sub_categories/_form.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/categories/_form.html.erb",
+		"/Users/Biay/projects/wowswap/app/views/products/show.json.jbuilder",
+		"/Users/Biay/projects/wowswap/app/models/sub_category.rb",
+		"/Users/Biay/projects/wowswap/app/models/category.rb",
+		"/Users/Biay/projects/wowswap/config/initializers/simple_form.rb",
+		"/Users/Biay/projects/wowswap/db/migrate/20150814212640_create_categories.rb",
+		"/Users/Biay/projects/wowswap/db/migrate/20150814212642_create_categories.rb",
+		"/Users/Biay/projects/wowswap/app/controllers/omniauth_callbacks_controller.rb",
+		"/Users/Biay/projects/wowswap/app/models/authorization.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/db/migrate/20150609170707_create_work_days.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/db/migrate/20150609170643_create_join_table_service_provider_skill.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/db/migrate/20150608190123_create_addresses.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/db/migrate/20150608185556_create_categories.rb",
+		"/Users/Biay/projects/wowswap/config/initializers/omniauth.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/views/users/registrations/new.html.erb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/views/bookings/_form.html.erb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/views/bookings/new.html.erb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/controllers/carts_controller.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/views/service_providers/show.html.erb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/views/carts/index.html.erb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/models/cart.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/controllers/bookings_controller.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/assets/stylesheets/font-awesome.css",
+		"/Users/Biay/projects/fixwale_user/people_net/app/models/service_provider.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/controllers/service_providers_controller.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/app/models/price.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/db/migrate/20150808062352_add_price_type_to_bookings.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/db/migrate/20150808054924_add_price_type_to_carts.rb",
+		"/Users/Biay/projects/wowswap/config/application.rb",
+		"/Users/Biay/projects/wowswap/db/migrate/20150814212638_add_name_to_users.rb",
+		"/Users/Biay/projects/wowswap/config/social_keys.yml",
+		"/Users/Biay/projects/wowswap/config/database.yml",
+		"/Users/Biay/projects/wowswap/config/environments/development.rb",
+		"/Users/Biay/projects/wowswap/db/migrate/20130714145508_create_authorizations.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/config/routes.rb",
+		"/Users/Biay/projects/fixwale_user/people_net/Gemfile"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/Biay/projects/wowswap/app/controllers",
+			"/Users/Biay/projects/wowswap/app/assets/stylesheets",
+			"/Users/Biay/projects/wowswap/app/assets",
+			"/Users/Biay/projects/wowswap/app/assets/javascripts",
+			"/Users/Biay/projects/fixwale_user/people_net/app/assets/stylesheets",
+			"/Users/Biay/projects/fixwale_seller/people_net/app/assets/stylesheets",
+			"/Users/Biay/projects/fixwale_user/people_net/app/assets",
+			"/Users/Biay/projects/fixwale_user/people_net/app/assets/stylesheets",
+			"/Users/Biay/projects/fixwale_user/people_net/app/assets",
+			"/Users/Biay/projects/fixwale_user/people_net/app/assets/javascripts",
+			"/Users/Biay/projects/fixwale_user/people_net/app/assets",
+			"<current file>",
+			"/Users/Biay/projects/fixwale_seller/people_net/app/assets/stylesheets",
+			"/Users/Biay/projects/fixwale_user/people_net/app/assets/stylesheets",
+			"/Users/Biay/projects/fixwale_user/people_net/app/assets/javascripts",
+			"/Users/Biay/projects/fixwale_user/people_net/app/assets/stylesheets",
+			"/Users/Biay/projects/fixwale_user/people_net/config",
+			"/Users/Biay/projects/fixwale_user/people_net/app/assets",
+			"<current file>",
+			"/Users/Biay/projects/people_net/app/views/bookings/index.html.erb",
+			"/Users/Biay/projects/people_net/app/assets/javascripts",
+			"/Users/Biay/projects/people_net/app",
+			"/Users/Biay/projects/people_net/app/assets",
+			"/Users/Biay/projects/people_net/app/views",
+			"/Users/Biay/projects/people_net/app",
+			"/Users/Biay/projects/people_net/app/assets/stylesheets",
+			"/Users/Biay/projects/people_net/app/assets",
+			"/Users/Biay/projects/portfolio",
+			"/Users/Biay/projects/people_net/app/assets",
+			"/Users/Biay/projects/people_net/app",
+			"/Users/Biay/projects/people_net/app/assets",
+			"/Users/Biay/projects/people_net/app/assets/stylesheets",
+			"/Users/Biay/projects/people_net/app/assets/javascripts",
+			"/Users/Biay/projects/people_net/public",
+			"/Users/Biay/projects/people_net/public/assets",
+			"/Users/Biay/projects/people_net/public",
+			"/Users/Biay/projects/people_net/app",
+			"/Users/Biay/projects/people_net/db/migrate"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"flash",
+			"\"hr",
+			"views",
+			"hr",
+			"hr ",
+			"button",
+			"category",
+			"carousel-control",
+			"owl",
+			".product",
+			"img src",
+			"content",
+			"<img",
+			"image",
+			"fa-sign",
+			"fa fa-sign",
+			"logou",
+			"profile_s",
+			"img/",
+			"header-profile.png",
+			"ontawesome-webfont.woff2?v=4.3.0",
+			"font",
+			"skin-config.html",
+			"skin",
+			"alert",
+			"alert-block",
+			"alert",
+			"btn-",
+			"scoped",
+			"rup",
+			"product-p",
+			".error",
+			"alert",
+			"my_profile_homes_path",
+			"icon-bookmark",
+			"input_f",
+			"sun",
+			".top-search-form",
+			"@color5_5",
+			"@color5_9",
+			"color5_9",
+			".top-search-form",
+			"type",
+			"le",
+			"leve",
+			"bootstrap.css.map",
+			"total",
+			"carts",
+			"hover",
+			"a hover",
+			".form-control",
+			".colors",
+			".colors li a",
+			"avai",
+			"@fo",
+			"arrow",
+			"fa-chevron-left",
+			"@font-face",
+			"minDa",
+			"date",
+			"start",
+			"fa-shopping-cart",
+			"asi",
+			"body-bg",
+			"image_tag",
+			"img",
+			"loader",
+			"timer.png",
+			"timer",
+			"large_left",
+			"loader.gif",
+			"large_left.png",
+			"src=\"img/",
+			"<img",
+			"pagination",
+			"headerbg",
+			"img",
+			"../img",
+			"image_",
+			"image_path",
+			"img/",
+			"img",
+			"img/",
+			"img/close.png",
+			"text/css",
+			"new WOW().init();",
+			"image_tag",
+			"<img src=",
+			"<img",
+			"vendor",
+			"=>",
+			"start_date",
+			"category",
+			"select",
+			"rating-small.png",
+			"checkbox.png",
+			"checkbox.png ",
+			"booking-location.png",
+			"/images/booking-location.png",
+			"img",
+			"img src",
+			"filter-close.png",
+			"checkbox.png",
+			"checkbox.p",
+			"img",
+			"rate",
+			"btn-primary",
+			"btn",
+			"btn-primary",
+			"googleapis",
+			"we deve",
+			"twitterFetcher",
+			"twitterFetcher_v10_min",
+			"cdn.",
+			"cd.",
+			"web",
+			"web ho",
+			"MongoDB",
+			"twit",
+			"specialOffers",
+			"assets",
+			"asset/",
+			"rating-small.png",
+			"<img",
+			"asset",
+			"btn btn-primary btn-lg btn-block pull-left",
+			"#topSearch",
+			"scoped"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"src=\"/assets/img/",
+			":",
+			"booking"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "booking.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"booking",
+				"app/models/booking.rb"
+			],
+			[
+				"gemfi",
+				"Gemfile"
+			],
+			[
+				"payment",
+				"app/models/payment.rb"
+			],
+			[
+				"devise",
+				"config/initializers/devise.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 702.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
