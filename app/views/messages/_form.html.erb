@@ -1,79 +1,100 @@
-<section>
-    <div class="second-page-container">
-        <div class="block-breadcrumb">
-            <div class="container">
-                <ul class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Contact</li>
-                </ul>
-            </div>
+<!-- START CONTAINER -->
+<div class="page-container row-fluid container-fluid">
+  <!-- SIDEBAR - START -->
+    <%= render 'layouts/sidebar' %>
+  <!--  SIDEBAR - END -->
+  <!-- START CONTENT -->
+  <section id="main-content" class=" ">
+    <section class="wrapper main-wrapper row" style=''>
+      <div class='col-xs-12'>
+        <div class="page-title">
+          <div class="pull-left">
+            <h1 class="title">Contact us.</h1> </div>
+          <div class="pull-right hidden-xs">
+            <ol class="breadcrumb">
+              <li>
+                <a href="index.html"><i class="fa fa-home"></i>Home</a>
+              </li>
+              <li>
+                <a href="crm-tickets.html">Contact us.</a>
+              </li>
+              <li class="active">
+                <strong>+</strong>
+              </li>
+            </ol>
+          </div>
         </div>
-        <div>
-            <div class="container">
-                <div class="header-for-light">
-                    <h1 class="wow fadeInRight animated" data-wow-duration="1s"><span>Contact</span> Information </h1>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-xs-12">
+        <section class="box ">
+          <header class="panel_header">
+            <h2 class="title pull-left">Basic Info</h2>
+       <!--      <div class="actions panel_actions pull-right">
+              <a class="box_toggle fa fa-chevron-down"></a>
+              <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
+              <a class="box_close fa fa-times"></a>
+            </div> -->
+          </header>
+          <div class="content-body">
+            <div class="row">
+              <%= simple_form_for(message) do |f| %>
+                  <% if message.errors.any? %>
+                    <div id="error_explanation">
+                      <h2>
+                        <%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:
+                      </h2>
+                      <ul>
+                        <% message.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+                <div class="col-xs-12 col-sm-9 col-md-8">
+                  <div class="form-group">
+                    <label class="form-label" for="field-129990">Full Name</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                      <%= f.input_field :full_name, class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="field-129990">Email</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                      <%= f.input_field :email, class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="field-129990">Mobile</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                      <%= f.input_field :mobile, class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                      <%= f.text_area :description, class: "form-control autogrow" %>
+                    </div>
+                  </div>
                 </div>
-                <div class="row">
-                    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div class="block-form box-border wow fadeInLeft animated" data-wow-duration="1s">
-                            <h3><i class="fa fa-thumb-tack"></i>Our Address</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.                                    </p>
-                            <hr>
-                            <h3><i class="fa fa-envelope-o"></i>Send Message</h3>
-                            <div>
-                                <div>
-                                	<%= simple_form_for(@message) do |f| %>
-										<%= f.error_notification %>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="name" class="control-label">Name:</label>
-                                                    <div>
-                                                        <%= current_user.full_name() rescue "NA" %>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="mobile" class="control-label">Email:</label>
-                                                    <div>
-                                                        <%= current_user.email %>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="description" class="control-label">Message:</label>
-                                                    <div>
-                                                    <%= f.text_area :content, class: "form-control" %>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <hr>
-    									<%= f.button :submit, 'SEND', class: "btn-default-1" %>
-									<% end %>
-
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div class="block-form box-border wow fadeInRight animated" data-wow-duration="1s">
-                            <h3> <i class="fa fa-adn"></i>Map</h3>
-                            <hr>
-                            <div class="google-map">
-                                <iframe src="https://www.google.com/maps/embed/v1/place?q=Bangalore,+Karnataka,+India&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" style="overflow:hidden;height:100%;width:100%;" frameborder="0" ></iframe>
-                            </div>
-
-                        </div>
-                    </article>
-
+                <div class="col-xs-12 col-sm-9 col-md-8 padding-bottom-30">
+                  <div class="text-left">
+                    <%= f.button :submit, 'Post', class: "btn btn-primary" %>
+                    <button type="button" class="btn">Cancel</button>
+                  </div>
                 </div>
+              <% end %>
             </div>
-        </div>
-    </div> 
-</section>
+          </div>
+        </section>
+      </div>
+    </section>
+  </section>
+  <!-- END CONTENT -->
+    <div class="chatapi-windows ">
+    </div>
+</div>

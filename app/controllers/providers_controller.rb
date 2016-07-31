@@ -15,6 +15,7 @@ class ProvidersController < ApplicationController
   # GET /providers/new
   def new
     @provider = Provider.new
+    @categories = Category.all
   end
 
   # GET /providers/1/edit
@@ -69,6 +70,6 @@ class ProvidersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def provider_params
-      params.fetch(:provider, {})
+      params.fetch(:provider, {}).permit(:title, :description, :notice_period, :category_id, :work_time_preference, :work_day_preference, :portfolio_website)
     end
 end

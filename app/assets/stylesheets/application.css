@@ -18,6 +18,7 @@
  *= require plugins/perfect-scrollbar/perfect-scrollbar
 
  *= require plugins/datepicker/css/datepicker
+ *= require plugins/icheck/skins/all
 
  *= require themes/style
  *= require themes/responsive

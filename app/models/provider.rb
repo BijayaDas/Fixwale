@@ -2,10 +2,10 @@ class Provider < ApplicationRecord
 	belongs_to :category
 	belongs_to :user
 
-  	has_many :address, dependent: :destroy
+  has_many :address, dependent: :destroy
 	has_many :languages, dependent: :destroy
 	has_many :prices, dependent: :destroy
-  	has_many :replies, dependent: :destroy
+  has_many :replies, dependent: :destroy
 	has_many :providers_skills
 
 

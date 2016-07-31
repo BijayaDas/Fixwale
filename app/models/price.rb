@@ -1,6 +1,6 @@
 class Price < ApplicationRecord
 
-	belongs_to :sprovider
+	belongs_to :provider
 
 	enum price_type: [:minimum_charge, :one_time, :hourly, :monthly, :yearly]
 

@@ -6,7 +6,6 @@ class CreateProviders < ActiveRecord::Migration[5.0]
       t.string :notice_period
       t.string :work_time_preference
       t.string :work_day_preference
-      t.string :notice_period
       t.string :attached_resume
       t.string :portfolio_website
       t.string :linkedin_url

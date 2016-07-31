@@ -11,7 +11,7 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
+* Run cron to remove expired enquiries.
 
 * Database initialization
 

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation, :agree) }
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation, :agree) }
   end
 
   def admin_only
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def service_provider_only
-    unless current_user.service_provider? || current_user.admin?
+    unless current_user.provider? || current_user.admin?
       redirect_to :root, :alert => "Access denied."
     end
   end

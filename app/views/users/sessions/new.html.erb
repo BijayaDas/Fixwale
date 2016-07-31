@@ -1,69 +1,60 @@
-<section>
-    <div class="second-page-container">
-        <div class="block">
-            <div class="container">
-                <div class="header-for-light">
-                    <h1 class="wow fadeInRight animated" data-wow-duration="1s"><span>Login</span> or <span>Register</span></h1>
-                </div>
-                <div class="row">
-                    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div class="block-form box-border wow fadeInLeft animated" data-wow-duration="1s">
-                            <h3><i class="fa fa-unlock"></i>Login</h3>
-                            <p>Please login using your existing account</p>
-                                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: 'col-md-12' } }) do |f| %>
-                                <%= f.error_notification %>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                    <%= f.input_field :email, required: false, autofocus: true, class: 'form-control', placeholder: "Username" %>
-                                    </div>
-                                    <div class="col-md-6">
-                                     <%= f.input_field :password, required: false,  class: 'form-control', placeholder: "Password" %>
-                                    </div>
-                                    <div class="col-md-12">
-                                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-                                    <div class="col-md-12">
-                                    <hr>
-                                    <%= f.button :submit, "Login", class: "btn-default-1" %>
-                                    <%= link_to "Forgot password?", new_password_path(resource_name), class: "btn-default-1"%>
+<script type="text/javascript">
+    $('body').addClass("login_page");
+</script>
+<div class="container-fluid">
+    <div class="login-wrapper row">
+        <div id="login" class="login loginpage col-lg-offset-4 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 col-xs-12 col-sm-6 col-lg-4">
+            <h1><a href="#" title="Login Page" tabindex="-1">fixwale</a></h1>
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: '' } }) do |f| %>
+                <%= f.error_notification %>
 
-                                    </div>
-                                    <div class="col-md-12">
-                                         <%- if devise_mapping.omniauthable? %>
-                                          <%- resource_class.omniauth_providers.each do |provider| %>
-                                            <% if provider.to_s == "facebook" %>
-                                              <%= link_to(omniauth_authorize_path(resource_name, provider), class: "btn btn-primary") do %>
-                                              <i class="fa fa-facebook"> Facebook login</i>
-                                              <% end%>
-                                            <% end %>
-                                            <% if provider.to_s == "google_oauth2" %>
-                                              <%= link_to(omniauth_authorize_path(resource_name, provider), class: "btn btn-danger") do %>
-                                                <i class="fa fa-google"> Google login</i>
-                                              <% end %>
-                                            <% end %>
-                                          <% end -%>
-                                        <% end -%>
-                                    </div>
-                                </div>                                    
-                     <% end %>
-                        </div>
-                    </article>
-                    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div class="block-form box-border wow fadeInRight animated" data-wow-duration="1s">
-                            <h3><i class="fa fa-pencil"></i>Create new account</h3>
-                            <p>Registration allows you to avoid filling in billing and shipping forms every time you checkout on this website.</p>
-                            <hr>
-                            <%= link_to "Register", new_registration_path(resource_name), class: "btn-default-1" %>
-                        </div>
+                <p>
+                    <label for="user_login">Email<br />
+                    <%= f.input_field :email, required: false, autofocus: true, class: 'input', placeholder: "Email" %>
+                    </label>
+                </p>
+                <p>
+                    <label for="user_pass">Password<br />
+                        <%= f.input_field :password, required: false,  class: 'input', placeholder: "Password" %>
+                    </label>
+                </p>
+                <p class="forgetmenot">
+                    <label class="icheck-label form-label" for="rememberme">
+                        <%= f.input :remember_me, as: :boolean, :input_html => { :checked => "checked", class: "icheck-minimal-aero"} if devise_mapping.rememberable? %>
+                    </label>
+                </p>
+                <p class="submit">
+                        <%= f.button :submit, "Login", class: "btn btn-accent btn-block" %>
+                </p>
+            <% end %>
+            
+            <p id="nav">
+                <%= link_to "Forgot password?", new_password_path(resource_name), class: "pull-left"%>
+                <%= link_to "Register", new_registration_path(resource_name), class: "pull-right" %>
+            </p>
+            <div class="clearfix"></div>
+            <div class="text-center register-social">
+                <%- if devise_mapping.omniauthable? %>
+                  <%- resource_class.omniauth_providers.each do |provider| %>
+                    <% if provider.to_s == "facebook" %>
+                      <%= link_to(omniauth_authorize_path(resource_name, provider), class: "btn btn-primary btn-lg facebook") do %>
+                      <i class="fa fa-facebook icon-sm"></i>
+                      <% end%>
+                    <% end %>
+                    <% if provider.to_s == "google_oauth2" %>
+                      <%= link_to(omniauth_authorize_path(resource_name, provider), class: "btn btn-primary btn-lg google-plus") do %>
+                        <i class="fa fa-google-plus icon-sm"></i>
+                      <% end %>
+                    <% end %>
+                  <% end -%>
+                <% end -%>
 
-                    </article>
-                </div>
+               <!--  <a href="#" class="btn btn-primary btn-lg facebook"><i class="fa fa-facebook icon-sm"></i></a>
+                <a href="#" class="btn btn-primary btn-lg twitter"><i class="fa fa-twitter icon-sm"></i></a>
+                <a href="#" class="btn btn-primary btn-lg google-plus"><i class="fa fa-google-plus icon-sm"></i></a>
+                <a href="#" class="btn btn-primary btn-lg dribbble"><i class="fa fa-dribbble icon-sm"></i></a> -->
+
             </div>
         </div>
-    </div> 
-</section>
-
-<style type="text/css">
-    #user_remember_me {
-        width: 20px;
-    }
-</style>
+    </div>
+</div>

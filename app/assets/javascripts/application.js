@@ -25,4 +25,6 @@
 //= require plugins/autosize/autosize.min
 //= require plugins/inputmask/min/jquery.inputmask.bundle.min
 
+//= require plugins/icheck/icheck.min
+
 //= require themes/scripts

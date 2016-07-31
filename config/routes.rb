@@ -5,35 +5,36 @@ Rails.application.routes.draw do
   resources :providers
   resources :enquiries
   resources :replies
+  resources :skills
   # resources :languages
-  resources :messages, only: [:new, :create]
+  resources :messages
   post '/rate' => 'rater#create', :as => 'rate'
   # resources :payments
-  resources :bookings do
-    member do
-      get :cancel
-    end
-  end
-  match "/bookings/:id/edit" => "bookings#edit", via: [:get, :post, :put, :patch]
+  # resources :bookings do
+  #   member do
+  #     get :cancel
+  #   end
+  # end
+  # match "/bookings/:id/edit" => "bookings#edit", via: [:get, :post, :put, :patch]
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
-  resources :comments, only: [:create]
+  # resources :comments, only: [:create]
   # resources :addresses
   # resources :roles
-  resources :domains, only: [:show]
+  # resources :domains, only: [:show]
   # resources :background_details
   # resources :skills
   # resources :sub_categories
   # resources :categories
-  resources :homes do
+  # resources :homes do
 
-    collection do
-      get :search
-    end
+  #   collection do
+  #     get :search
+  #   end
     
-  end
+  # end
     
   
-  root to: "homes#index"
+  root to: "enquiries#index"
   
 end

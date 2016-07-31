@@ -15,6 +15,7 @@ class EnquiriesController < ApplicationController
   # GET /enquiries/new
   def new
     @enquiry = Enquiry.new
+    @categories = Category.all
   end
 
   # GET /enquiries/1/edit
@@ -69,6 +70,6 @@ class EnquiriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def enquiry_params
-      params.fetch(:enquiry, {})
+      params.fetch(:enquiry, {}).permit(:title, :description, :deadline, :category_id, :budget ,:max_applications ,:email ,:mobile ,:contact_details ,:job_description)
     end
 end
