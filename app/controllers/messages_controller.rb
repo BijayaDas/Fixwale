@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_filter :admin_only, except: [:new, :create, :edit, :update] #this method admin_only declared in app_contlr
+  # before_filter :admin_only, except: [:new, :create, :edit, :update] #this method admin_only declared in app_contlr
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages

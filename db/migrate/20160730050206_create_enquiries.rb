@@ -8,7 +8,8 @@ class CreateEnquiries < ActiveRecord::Migration[5.0]
       t.string :email
       t.text :contact_details
       t.integer :max_applications
-      t.string :deadline
+      t.integer :status, limit: 1
+      t.string :max_applications
       t.references :category, index: true
       t.references :user, index: true
       t.timestamps

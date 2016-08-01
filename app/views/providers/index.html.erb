@@ -1,25 +1,83 @@
-<p id="notice"><%= notice %></p>
+<!-- START CONTAINER -->
+<div class="page-container row-fluid container-fluid">
+  <!-- SIDEBAR - START -->
+  <%= render 'layouts/sidebar' %>
+  <!--  SIDEBAR - END -->
+  <!-- START CONTENT -->
+  <section id="main-content" class=" ">
+    <section class="wrapper main-wrapper row" style=''>
+      <div class='col-xs-12'>
+        <div class="page-title">
+          <div class="pull-left">
+            <h1 class="title">Providers</h1> </div>
+          <div class="pull-right hidden-xs">
+            <ol class="breadcrumb">
+              <li>
+                <a href="index.html"><i class="fa fa-home"></i>Home</a>
+              </li>
+              <li>
+                <a href="crm-leads.html">Providers</a>
+              </li>
+              <li class="active">
+                <strong>All Providers</strong>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-lg-12">
+        <section class="box ">
+          <header class="panel_header">
+            <h2 class="title pull-left">All Providers</h2>
+            <div class="panel_actions pull-right">
+              <%= link_to '<i class="fa fa-plus"></i> Add Providers'.html_safe, new_provider_path, class: "btn btn-success" %>
+            </div>
+          </header>
+          <div class="content-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <!-- ********************************************** -->
+                <table id="example" class="display table table-hover table-condensed">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>TITLE</th>
+                      <th>DESCRIPTION</th>
+                      <th>NOTICE</th>
+                      <th>STATUS</th>
+                      <th>CATEGORY</th>
+                      <th>USER NAME</th>
+                      <th>ACTIONS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <% @providers.each do |provider| %>
+                    <tr>
+                      <td><%= provider.id %></td>
+                      <td><%= provider.title %></td>
+                      <td><%= provider.description rescue "NA" %></td>
+                      <td><%= provider.notice_period %></td>
+                      <td><%= provider.status %></td>
+                      <td><%= provider.category.title %></td>
+                      <td><%= provider.user.full_name() %></td>
+                      <td>
+                        <%= link_to 'Show', provider, class: "btn btn-info" %> 
+                        <%= link_to 'Edit', edit_reply_path(provider), class: "btn btn-primary" %> 
+                        <%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                      </td>
+                    </tr>
+                  <% end %>
 
-<h1>Providers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @providers.each do |provider| %>
-      <tr>
-        <td><%= link_to 'Show', provider %></td>
-        <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
-        <td><%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Provider', new_provider_path %>
+                  </tbody>
+                </table>
+                <!-- ********************************************** -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </section>
+  <!-- END CONTENT -->
+</div>

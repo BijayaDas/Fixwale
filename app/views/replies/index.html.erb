@@ -1,25 +1,81 @@
-<p id="notice"><%= notice %></p>
+<!-- START CONTAINER -->
+<div class="page-container row-fluid container-fluid">
+  <!-- SIDEBAR - START -->
+  <%= render 'layouts/sidebar' %>
+  <!--  SIDEBAR - END -->
+  <!-- START CONTENT -->
+  <section id="main-content" class=" ">
+    <section class="wrapper main-wrapper row" style=''>
+      <div class='col-xs-12'>
+        <div class="page-title">
+          <div class="pull-left">
+            <h1 class="title">Replies</h1> </div>
+          <div class="pull-right hidden-xs">
+            <ol class="breadcrumb">
+              <li>
+                <a href="index.html"><i class="fa fa-home"></i>Home</a>
+              </li>
+              <li>
+                <a href="crm-leads.html">Replies</a>
+              </li>
+              <li class="active">
+                <strong>All Replies</strong>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-lg-12">
+        <section class="box ">
+          <header class="panel_header">
+            <h2 class="title pull-left">All Replies</h2>
+            <div class="panel_actions pull-right">
+              <%= link_to '<i class="fa fa-plus"></i> Add Replies'.html_safe, new_reply_path, class: "btn btn-success" %>
+            </div>
+          </header>
+          <div class="content-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <!-- ********************************************** -->
+                <table id="example" class="display table table-hover table-condensed">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>EXPECTED AMOUNT</th>
+                      <th>COVER LETTER</th>
+                      <th>STATUS</th>
+                      <th>ENQUIRY</th>
+                      <th>PROVIDER</th>
+                      <th>ACTIONS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <% @replies.each do |reply| %>
+                    <tr>
+                      <td><%= reply.id %></td>
+                      <td><%= reply.expected_amount %></td>
+                      <td><%= reply.cover_letter rescue "NA" %></td>
+                      <td><%= reply.status %></td>
+                      <td><%= reply.enquiry.title %></td>
+                      <td><%= reply.provider.title %></td>
+                      <td>
+                        <%= link_to 'Show', reply, class: "btn btn-info" %> 
+                        <%= link_to 'Edit', edit_reply_path(reply), class: "btn btn-primary" %> 
+                        <%= link_to 'Destroy', reply, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                      </td>
+                    </tr>
+                  <% end %>
 
-<h1>Replies</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @replies.each do |reply| %>
-      <tr>
-        <td><%= link_to 'Show', reply %></td>
-        <td><%= link_to 'Edit', edit_reply_path(reply) %></td>
-        <td><%= link_to 'Destroy', reply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Reply', new_reply_path %>
+                  </tbody>
+                </table>
+                <!-- ********************************************** -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </section>
+  <!-- END CONTENT -->
+</div>

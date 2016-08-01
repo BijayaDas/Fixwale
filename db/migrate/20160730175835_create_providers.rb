@@ -9,7 +9,7 @@ class CreateProviders < ActiveRecord::Migration[5.0]
       t.string :attached_resume
       t.string :portfolio_website
       t.string :linkedin_url
-      t.boolean :actively_looking
+      t.integer :actively_looking, limit: 1
       t.references :category
       t.references :user
       t.timestamps
