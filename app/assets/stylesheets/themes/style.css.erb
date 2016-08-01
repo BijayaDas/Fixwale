@@ -7105,16 +7105,16 @@ border-left: 3px solid transparent;
 ----------------------------------------------------------*/
 
 .page-topbar .logo-area {
-    background-image: url('/assets/logo.png');
+    background-image: url('<%= asset_path("logo.png") %>');
     background-repeat: no-repeat;
 }
 .page-topbar.sidebar_shift .logo-area {
-    background-image: url('/assets/logo-folded.png');
+    background-image: url('<%= asset_path("logo-folded.png") %>');
     background-repeat: no-repeat;
     background-position: right top;
 }
 .page-topbar.chat_shift .logo-area {
-    background-image: url('/assets/logo-folded.png');
+    background-image: url('<%= asset_path("logo-folded.png") %>');
     background-repeat: no-repeat;
     background-position: right top;
 }
