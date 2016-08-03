@@ -35,7 +35,7 @@ START TOPBAR -->
           <% if current_user %>
             <a href="#" data-toggle="dropdown" class="toggle">
               <%= image_tag('data/profile/profile.jpg', :alt=>"user-image", :class=>"img-circle img-inline") %>
-              <span><%= current_user.first_name %> <i class="fa fa-angle-down"></i></span>
+              <span><%= current_user.full_name() %> <i class="fa fa-angle-down"></i></span>
             </a>
             <ul class="dropdown-menu profile animated fadeIn">
               <li>
@@ -43,16 +43,18 @@ START TOPBAR -->
                   <i class="fa fa-info"></i> Help
                 </a>
               </li>
-                <li>
-                  <%= link_to edit_provider_path(current_user.provider.id) do  %>
-                    <i class="fa fa-wrench"></i> Settings
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to provider_path(current_user.provider.id) do  %>
-                    <i class="fa fa-user"></i> Profile
-                  <% end %>
-                </li>
+                <% if !current_user.provider.nil?%>
+                  <li>
+                    <%= link_to edit_provider_path(current_user.provider.id) do  %>
+                      <i class="fa fa-wrench"></i> Settings
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to provider_path(current_user.provider.id) do  %>
+                      <i class="fa fa-user"></i> Profile
+                    <% end %>
+                  </li>
+                <% end %>
                 <li class="last">
                   <%= link_to destroy_user_session_path, method: :delete do  %>
                     <i class="fa fa-lock"></i> Logout
