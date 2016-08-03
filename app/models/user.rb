@@ -7,7 +7,7 @@ class User < ApplicationRecord
          
   has_many :authorizations
   has_many :enquiries, dependent: :destroy
-  has_many :providers, dependent: :destroy
+  has_one :provider, dependent: :destroy
   has_many :addresses, dependent: :destroy
 
   ratyrate_rater

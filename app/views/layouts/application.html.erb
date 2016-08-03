@@ -10,11 +10,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <%= csrf_meta_tags %>
 
-    <%= favicon_link_tag 'favicon.ico' %>
+    <%= image_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'index_app', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'index_app', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload','data-turbolinks-eval' => false %>
+    <%= javascript_include_tag 'index_app', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval' => false %>
   </head>
   <body class=" ">
     <%#= render partial: "layouts/flash_messages", flash: flash %>

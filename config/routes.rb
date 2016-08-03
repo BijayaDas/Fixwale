@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # end
   # match "/bookings/:id/edit" => "bookings#edit", via: [:get, :post, :put, :patch]
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  resources :users
 
   # resources :comments, only: [:create]
   # resources :addresses
