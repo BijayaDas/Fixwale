@@ -43,10 +43,10 @@
                     <tr>
                       <th>ID</th>
                       <th>TITLE</th>
-                      <th>DESCRIPTION</th>
-                      <th>MOBILE</th>
-                      <th>EMAIL</th>
-                      <th>CONTACTS</th>
+<!--                      <th>DESCRIPTION</th>-->
+<!--                      <th>MOBILE</th>-->
+<!--                      <th>EMAIL</th>-->
+<!--                      <th>CONTACTS</th>-->
                       <th>MAX_APPLICATION</th>
                       <th>CATEGORY</th>
                       <th>POSTED BY</th>
@@ -59,13 +59,14 @@
                     <tr>
                       <td><%= enquiry.id %></td>
                       <td><%= enquiry.title %></td>
-                      <td><%= enquiry.job_description %></td>
-                      <td><%= enquiry.mobile %></td>
-                      <td><%= enquiry.email %></td>
-                      <td><%= enquiry.contact_details %></td>
+<!--                      <td><%#= enquiry.job_description %></td>-->
+<!--                      <td><%#= enquiry.mobile %></td>-->
+<!--                      <td><%#= enquiry.email %></td>-->
+<!--                      <td><%#= enquiry.contact_details %></td>-->
                       <td><%= enquiry.max_applications %></td>
                       <td><%= enquiry.category.title %></td>
-                      <td><%= enquiry.user.full_name() %></td>
+                      <td><%= enquiry.user.full_name() rescue nil %></td>
+                      <td><%= enquiry.status rescue nil %></td>
                       <td>
                         <%= link_to 'Show', enquiry, class: "btn btn-info" %> 
                         <%= link_to 'Edit', edit_enquiry_path(enquiry), class: "btn btn-primary" %> 
