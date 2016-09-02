@@ -37,64 +37,42 @@
                 </div>
                 <div class="uprofile-name">
                   <h3>
-                    <a href="#">Web Designing</a>
+                    <a href="#"><%= @enquiry.user.full_name %></a>
                     <!-- Available statuses: online, idle, busy, away and offline -->
                     <span class="uprofile-status online"></span>
                   </h3>
-                  <p class="uprofile-title">Computer Engg.</p>
+                  <p class="uprofile-title">Mob: <%= @enquiry.mobile %></p>
+                  <p class="uprofile-title">Email: <%= @enquiry.email %></p>
                 </div>
                 <div class="uprofile-info">
-                  <ul class="list-unstyled">
-                    <li><i class='fa fa-home'></i> New York, USA</li>
-                    <li><i class='fa fa-user'></i> 340 Contacts</li>
-                  </ul>
+                  <%= @enquiry.contact_details %>
+                  <!--
+                    <ul class="list-unstyled">
+                      <li><i class='fa fa-home'></i> New York, USA</li>
+                      <li><i class='fa fa-user'></i> 340 Contacts</li>
+                    </ul>
+                    -->
                 </div>
-                <div class="uprofile-buttons">
-                  <a class="btn btn-md btn-primary">Send Message</a>
-                  <a class="btn btn-md btn-primary">Add as Friend</a>
-                </div>
-                <div class=" uprofile-social">
-                  <a href="#" class="btn btn-primary btn-md facebook"><i class="fa fa-facebook icon-xs"></i></a>
-                  <a href="#" class="btn btn-primary btn-md twitter"><i class="fa fa-twitter icon-xs"></i></a>
-                  <a href="#" class="btn btn-primary btn-md google-plus"><i class="fa fa-google-plus icon-xs"></i></a>
-                  <a href="#" class="btn btn-primary btn-md dribbble"><i class="fa fa-dribbble icon-xs"></i></a>
-                </div>
+                
+                  <div class="uprofile-buttons">
+                   <%= link_to "Apply", new_reply_path(job_id: @enquiry.id), class: "btn btn-md btn-primary" %>
+                   <%= link_to "Report", report_enquiry_path(@enquiry), class: "btn btn-md btn-danger" %>
+<!--                    <a class="btn btn-md btn-primary">Add as Friend</a>-->
+                  </div>
+                  
               </div>
               <div class="col-md-9 col-sm-8 col-xs-12">
                 <div class="uprofile-content">
                   <div class="">
-                    <h4>Biography:</h4>
-                    <p>Education is free in Brunei Darussalam not limited to government educational institutions but private educational institutions too. There are mainly two types of educational institutions namely government or public as well as private institutions. Several stages have to be undergone by the prospective students leading to higher qualifications such as Bachelors Degree.</p>
-                    <ul>
-                      <li>Primary School (Year 1 to 6)</li>
-                      <li>Secondary School (Year 7 to 11)</li>
-                      <li>High School [or also known as the Sixth Form Centers] (Year 12 to 13)</li>
-                      <li>Colleges (Pre-University to Diploma)</li>
-                      <li>University Level (Undergraduate, Postgraduate and Professional)</li>
-                    </ul>
-                    <p>It takes six and five years to complete the primary and secondary levels respectively. Upon completing these two crucial stages, students have freedom to progress to sixth-form centers, colleges or probably straight to employment. Ahead of times, these students will be led to undertake the university level programs in both, government and private university colleges.</p>
-                    <p>Education is free in Brunei Darussalam not limited to government educational institutions but private educational institutions too. There are mainly two types of educational institutions namely government or public as well as private institutions. Several stages have to be undergone by the prospective students leading to higher qualifications such as Bachelors Degree.</p>
-                    <ul>
-                      <li>Primary School (Year 1 to 6)</li>
-                      <li>Secondary School (Year 7 to 11)</li>
-                      <li>High School [or also known as the Sixth Form Centers] (Year 12 to 13)</li>
-                      <li>Colleges (Pre-University to Diploma)</li>
-                      <li>University Level (Undergraduate, Postgraduate and Professional)</li>
-                    </ul>
-                    <p>It takes six and five years to complete the primary and secondary levels respectively. Upon completing these two crucial stages, students have freedom to progress to sixth-form centers, colleges or probably straight to employment. Ahead of times, these students will be led to undertake the university level programs in both, government and private university colleges.</p>
-                    <div class="clearfix"></div>
+                    <h4> <%= @enquiry.title %></h4>
+                    <!--   titile-->
                     <hr>
-                    <h4>Subjects:</h4>
-                    <ul>
-                      <li>Integer tincidunt.</li>
-                      <li>Praesent vestibulum dapibus nibh.</li>
-                      <li> Phasellus consectetuer vestibulum elit.</li>
-                      <li>M.B.B.S from Ski University</li>
-                      <li>Praesent vestibulum dapibus nibh.</li>
-                      <li>Proin pretium, leo ac pellentesque mollis justo.</li>
-                      <li>unc ultrices eros, sed gravida augue augue</li>
-                    </ul>
+                    <h4>Status: <%= @enquiry.status %></h4>
+                    <h4>Category: <%= @enquiry.category.title %></h4>
+                    <h4>Max Application: <%= @enquiry.max_applications %></h4>
+                    <h4>Deadline: <%= @enquiry.deadline %></h4>
                     <div class="clearfix"></div>
+                    <p><strong>Job Description:</strong> <%= @enquiry.job_description %></p>
                     <hr>
                     <div class="clearfix"></div>
                   </div>

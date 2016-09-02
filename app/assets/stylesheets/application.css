@@ -20,6 +20,9 @@
  *= require plugins/datepicker/css/datepicker
  *= require plugins/icheck/skins/all
 
+ *= require plugins/jquery-ui/smoothness/jquery-ui.min
+ *= require plugins/multi-select/css/multi-select
+
  *= require themes/style
  *= require themes/responsive
  *= require_self

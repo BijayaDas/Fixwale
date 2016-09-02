@@ -26,5 +26,8 @@
 //= require plugins/inputmask/min/jquery.inputmask.bundle.min
 
 //= require plugins/icheck/icheck.min
+//= require plugins/jquery-ui/smoothness/jquery-ui.min
+//= require plugins/multi-select/js/jquery.multi-select
+//= require plugins/multi-select/js/jquery.quicksearch
 
 //= require themes/scripts

@@ -1,4 +1,5 @@
 class RepliesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_reply, only: [:show, :edit, :update, :destroy]
 
   # GET /replies
@@ -14,6 +15,7 @@ class RepliesController < ApplicationController
 
   # GET /replies/new
   def new
+		@enquiry = Enquiry.find(params[:job_id]) if !params[:job_id].blank?
     @reply = Reply.new
   end
 
@@ -25,10 +27,9 @@ class RepliesController < ApplicationController
   # POST /replies.json
   def create
     @reply = Reply.new(reply_params)
-
     respond_to do |format|
       if @reply.save
-        format.html { redirect_to @reply, notice: 'Reply was successfully created.' }
+        format.html { redirect_to replies_path, notice: 'Reply was successfully created.' }
         format.json { render :show, status: :created, location: @reply }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class RepliesController < ApplicationController
   def update
     respond_to do |format|
       if @reply.update(reply_params)
-        format.html { redirect_to @reply, notice: 'Reply was successfully updated.' }
+        format.html { redirect_to replies_path, notice: 'Reply was successfully updated.' }
         format.json { render :show, status: :ok, location: @reply }
       else
         format.html { render :edit }
@@ -69,6 +70,6 @@ class RepliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reply_params
-      params.fetch(:reply, {})
+      params.fetch(:reply, {}).permit(:expected_amount, :cover_letter, :enquiry_id)
     end
 end

@@ -1,5 +1,6 @@
 class EnquiriesController < ApplicationController
-  before_action :set_enquiry, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_enquiry, only: [:show, :edit, :update, :destroy, :report]
 
   # GET /enquiries
   # GET /enquiries.json
@@ -61,7 +62,9 @@ class EnquiriesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+	def report
+		redirect_to :back, notice: 'Enquiry was successfully reported.'
+	end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_enquiry

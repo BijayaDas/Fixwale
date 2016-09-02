@@ -43,10 +43,10 @@
                     <tr>
                       <th>ID</th>
                       <th>EXPECTED AMOUNT</th>
-                      <th>COVER LETTER</th>
+<!--                      <th>COVER LETTER</th>-->
                       <th>STATUS</th>
-                      <th>ENQUIRY</th>
-                      <th>PROVIDER</th>
+                      <th>ENQUIRY ID</th>
+<!--                      <th>PROVIDER</th>-->
                       <th>ACTIONS</th>
                     </tr>
                   </thead>
@@ -55,10 +55,10 @@
                     <tr>
                       <td><%= reply.id %></td>
                       <td><%= reply.expected_amount %></td>
-                      <td><%= reply.cover_letter rescue "NA" %></td>
-                      <td><%= reply.status %></td>
-                      <td><%= reply.enquiry.title %></td>
-                      <td><%= reply.provider.title %></td>
+<!--                      <td><%#= reply.cover_letter rescue "NA" %></td>-->
+                      <td><%= reply.status rescue nil%></td>
+                      <td>#<%= reply.enquiry.id rescue nil %></td>
+<!--                      <td><%#= reply.provider.title rescue nil %></td>-->
                       <td>
                         <%= link_to 'Show', reply, class: "btn btn-info" %> 
                         <%= link_to 'Edit', edit_reply_path(reply), class: "btn btn-primary" %> 

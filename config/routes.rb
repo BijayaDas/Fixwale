@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :providers
-  resources :enquiries
+  resources :enquiries do
+	   member do
+       get :report
+     end
+	end
   resources :replies
   resources :skills
   # resources :languages
