@@ -49,7 +49,7 @@ gem "paranoia"
 # gem 'ajaxful_rating'
 # gem 'less-rails'
 gem "therubyracer"
-#gem "jquery-turbolinks", :git => 'git://github.com/BijayaDas/jquery.turbolinks.git'
+gem "jquery-turbolinks"
 #source 'https://rails-assets.org' do
 #    gem 'rails-assets-onmount'
 #end

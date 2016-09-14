@@ -21,12 +21,12 @@
     </div> -->
     <!-- USER INFO - END -->
     <ul class='wraplist'>
-      <li class='menusection'>Main</li>
+<!--      <li class='menusection'>Main</li>-->
       <li class="">
-        <a href="#">
-          <i class="fa fa-dashboard"></i>
-          <span class="title">Dashboard</span>
-        </a>
+        <%= link_to root_path do %>
+          <i class="fa fa-home"></i>
+          <span class="title">Home</span>
+        <% end %>
       </li>
       <li class="">
         <a href="javascript:;">
@@ -54,6 +54,7 @@
          </li>
         </ul>
       </li>
+      <% #if current_user.provider? || current_user.admin? %>
       <li class="">
         <a href="javascript:;">
           <i class="fa fa-suitcase"></i>
@@ -67,6 +68,8 @@
          </li>
         </ul>
       </li>
+      <%# end %>
+      <% #if current_user.admin? %>
       <li class="">
         <a href="javascript:;">
           <i class="fa fa-suitcase"></i>
@@ -119,6 +122,7 @@
          </li>
         </ul>
       </li>
+      <%# end %>
     </ul>
   </div>
 </div>
