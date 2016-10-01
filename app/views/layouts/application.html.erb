@@ -11,10 +11,10 @@
     <%= csrf_meta_tags %>
 
     <%= image_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'index_app', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload','data-turbolinks-eval' => false %>
-    <%= javascript_include_tag 'index_app', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval' => false %>
+    <%= stylesheet_link_tag    'application', media: 'all',  'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'index_app', media: 'all',  'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application',  'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'index_app',  'data-turbolinks-track' => true %>
   </head>
   <body class=" ">
     <%#= render partial: "layouts/flash_messages", flash: flash %>

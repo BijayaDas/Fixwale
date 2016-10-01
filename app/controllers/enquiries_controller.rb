@@ -5,12 +5,17 @@ class EnquiriesController < ApplicationController
   # GET /enquiries
   # GET /enquiries.json
   def index
-    @enquiries = Enquiry.all
+    if current_user.admin?
+      @enquiries = Enquiry.all
+    else
+      @enquiries = Enquiry.where(user_id: current_user.id)
+    end
   end
 
   # GET /enquiries/1
   # GET /enquiries/1.json
   def show
+    @replies = @enquiry.replies
   end
 
   # GET /enquiries/new

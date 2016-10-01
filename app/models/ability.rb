@@ -9,20 +9,20 @@ class Ability
     if @user.roles.size == 0
 #      can :read, :all #for guest without roles
     end
-		if user.admin?
-			can :manage, :all
-		elsif user.recruiter
-			can :manage, :enquiry
-			can :manage, :reply
+	if user.admin?
+		can :manage, :all
+	elsif user.recruiter
+		can :manage, :enquiry
+		can :manage, :reply
 
-			can :read, :category
-			can :read, :provider
-			can :read, :price
-			can :read, :skill
-			can :read, :rate
-		elsif user.provider
-			can :read, :all    
-		end
+		can :read, :category
+		can :read, :provider
+		can :read, :price
+		can :read, :skill
+		can :read, :rate
+	elsif user.provider
+		can :read, :all    
+	end
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

@@ -5,4 +5,8 @@ class Enquiry < ApplicationRecord
 
 	has_many :replies, dependent: :destroy
 
+	def enquiry_owner(user)
+		self.user_id == user.id
+	end
+
 end

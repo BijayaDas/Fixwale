@@ -50,11 +50,24 @@
         <ul class="sub-menu">
           <li>
            <%= link_to 'Index', replies_path %>
-           <%= link_to 'Add', new_reply_path %>
+           <%#= link_to 'Add', new_reply_path %>
          </li>
         </ul>
       </li>
-      <% #if current_user.provider? || current_user.admin? %>
+      <li class="">
+        <a href="javascript:;">
+          <i class="fa fa-suitcase"></i>
+          <span class="title">Categories</span>
+          <span class="arrow "></span><!-- <span class="label label-accent">HOT</span> -->
+        </a>
+        <ul class="sub-menu">
+          <li>
+           <%= link_to 'Index', categories_path %>
+           <%= link_to 'Add', new_category_path %>
+         </li>
+        </ul>
+      </li>
+      <% if current_user.provider? || current_user.admin? %>
       <li class="">
         <a href="javascript:;">
           <i class="fa fa-suitcase"></i>
@@ -68,8 +81,8 @@
          </li>
         </ul>
       </li>
-      <%# end %>
-      <% #if current_user.admin? %>
+      <% end %>
+      <% if current_user.admin? %>
       <li class="">
         <a href="javascript:;">
           <i class="fa fa-suitcase"></i>
@@ -122,7 +135,7 @@
          </li>
         </ul>
       </li>
-      <%# end %>
+      <% end %>
     </ul>
   </div>
 </div>
