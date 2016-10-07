@@ -17,8 +17,10 @@
     <%= javascript_include_tag 'index_app',  'data-turbolinks-track' => true %>
   </head>
   <body class=" ">
-    <%#= render partial: "layouts/flash_messages", flash: flash %>
-    <%= render 'layouts/header' %>
+    <%= render partial: "layouts/flash_messages", flash: flash %>
+    <% if current_user %>
+      <%= render 'layouts/header' %>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

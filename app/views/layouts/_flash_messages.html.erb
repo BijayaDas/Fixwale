@@ -1,11 +1,15 @@
+<style>
+  .alert {
+    z-index: 1000;
+    margin-top: 41px;
+    margin-bottom: -41px;
+    background: #9bd2ea;
+  }
+</style>
+
 <% flash.each do |type, message| %>
-	<script type="text/javascript">
-	    $(document).ready(function () {
-	            swal({
-	                title: "Alert",
-	                text: "<%= message %>"
-	            });
-	    });
-	</script>
-	<% flash.delete(type) %>
+  <div class="alert <%= bootstrap_class_for(type) %> fade in">
+    <button class="close" data-dismiss="alert">×</button>
+    <%= message %>
+  </div>
 <% end %>

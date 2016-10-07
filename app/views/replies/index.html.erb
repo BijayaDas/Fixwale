@@ -30,9 +30,9 @@
         <section class="box ">
           <header class="panel_header">
             <h2 class="title pull-left">All Replies</h2>
-            <div class="panel_actions pull-right">
-              <%= link_to '<i class="fa fa-plus"></i> Add Replies'.html_safe, new_reply_path, class: "btn btn-success" %>
-            </div>
+            <!-- <div class="panel_actions pull-right">
+              <%#= link_to '<i class="fa fa-plus"></i> Add Replies'.html_safe, new_reply_path, class: "btn btn-success" %>
+            </div> -->
           </header>
           <div class="content-body">
             <div class="row">
@@ -51,14 +51,15 @@
                   <tbody>
                   <% @replies.each do |reply| %>
                     <tr>
-                      <td><%= reply.id %></td>
+                      <td class="center"><%= reply.id %></td>
                       <td><%= reply.expected_amount %></td>
                       <td><%= reply.status rescue nil%></td>
                       <td>#<%= reply.enquiry.id rescue nil %></td>
                       <td>
-                        <%= link_to 'Show', reply, class: "btn btn-info" %> 
-                        <%= link_to 'Edit', edit_reply_path(reply), class: "btn btn-primary" %> 
-                        <%= link_to 'Destroy', reply, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                        <%= link_to 'Show', reply, class: "btn btn-info" %>
+                        <%= link_to 'Profile', provider_path(reply.provider_id), class: "btn btn-warning" %>
+                        <%#= link_to 'Edit', edit_reply_path(reply), class: "btn btn-primary" %>
+                        <%#= link_to 'Destroy', reply, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
                       </td>
                     </tr>
                   <% end %>

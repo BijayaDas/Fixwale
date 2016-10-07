@@ -32,7 +32,7 @@ class EnquiriesController < ApplicationController
   # POST /enquiries.json
   def create
     @enquiry = Enquiry.new(enquiry_params)
-
+    @enquiry.user_id = current_user.id
     respond_to do |format|
       if @enquiry.save
         format.html { redirect_to @enquiry, notice: 'Enquiry was successfully created.' }
@@ -78,6 +78,6 @@ class EnquiriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def enquiry_params
-      params.fetch(:enquiry, {}).permit(:title, :description, :deadline, :category_id, :budget ,:max_applications ,:email ,:mobile ,:contact_details ,:job_description)
+      params.fetch(:enquiry, {}).permit(:title, :description, :deadline, :category_id, :budget ,:max_applications ,:email ,:mobile ,:contact_details ,:job_description, :deleted_at)
     end
 end

@@ -5,7 +5,13 @@ class RepliesController < ApplicationController
   # GET /replies
   # GET /replies.json
   def index
-    @replies = Reply.all
+    if current_user.admin?
+      @replies = Reply.all
+    elsif current_user.provider?
+      @replies = Reply.where(user_id: current_user.id)
+    elsif current_user.recruiter?
+      @replies = Reply.where(enquiry_id: current_user.enquiries.ids)
+    end
   end
 
   # GET /replies/1

@@ -59,7 +59,7 @@
                    <%= link_to "Report", report_enquiry_path(@enquiry), class: "btn btn-md btn-danger" %>
                    <!-- <a class="btn btn-md btn-primary">Add as Friend</a>-->
                   </div>
-                <% end %>  
+                <% end %>
               </div>
               <div class="col-md-9 col-sm-8 col-xs-12">
                 <div class="uprofile-content">
@@ -110,8 +110,9 @@
                       <td><%= reply.status rescue nil%></td>
                       <td>#<%= reply.enquiry.id rescue nil %></td>
                       <td>
-                        <%= link_to 'Show', reply, class: "btn btn-info" %> 
-                        <%= link_to 'Edit', edit_reply_path(reply), class: "btn btn-primary" %> 
+                        <%= link_to 'Details', reply, class: "btn btn-info" %>
+                        <%= link_to 'Profile', provider_path(reply.provider_id), class: "btn btn-warning" %>
+                        <%#= link_to 'Edit', edit_reply_path(reply), class: "btn btn-primary" %>
                         <%#= link_to 'Destroy', reply, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
                       </td>
                     </tr>

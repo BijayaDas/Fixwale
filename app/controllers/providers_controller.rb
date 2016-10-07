@@ -1,6 +1,7 @@
 class ProvidersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
+  before_action :provider_only, only: [:index, :new, :edit, :create, :update, :destroy]
 
   # GET /providers
   # GET /providers.json

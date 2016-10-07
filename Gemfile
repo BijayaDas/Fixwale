@@ -45,7 +45,8 @@ gem 'gritter'
 gem 'friendly_id'
 gem 'prawn'
 # gem 'ransack'
-gem "paranoia"
+# gem "paranoia"
+gem "paranoia", github: "rubysherpas/paranoia", branch: "rails5"
 # gem 'ajaxful_rating'
 # gem 'less-rails'
 gem "therubyracer"

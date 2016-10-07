@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/rubysherpas/paranoia.git
+  revision: 70f6e37b7b32cf4f70c5b852a38597699f476c62
+  branch: rails5
+  specs:
+    paranoia (2.2.0.pre)
+      activerecord (>= 4.0, < 5.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,7 +49,7 @@ GEM
       tzinfo (~> 1.1)
     airbrussh (1.1.0)
       sshkit (>= 1.6.1, != 1.7.0)
-    arel (7.1.1)
+    arel (7.1.2)
     bcrypt (3.1.11)
     best_in_place (3.1.0)
       actionpack (>= 3.2)
@@ -129,7 +137,7 @@ GEM
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
-    minitest (5.9.0)
+    minitest (5.9.1)
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -170,8 +178,6 @@ GEM
       omniauth-oauth (~> 1.1)
     options (2.3.2)
     orm_adapter (0.5.0)
-    paranoia (1.2.0)
-      activerecord (>= 3.0.0)
     passenger (5.0.30)
       rack
       rake (>= 0.8.1)
@@ -304,7 +310,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-linkedin
   omniauth-twitter
-  paranoia
+  paranoia!
   passenger
   pg (~> 0.18)
   prawn
