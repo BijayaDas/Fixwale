@@ -2,6 +2,7 @@ class ProvidersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
   before_action :provider_only, only: [:index, :new, :edit, :create, :update, :destroy]
+  before_action :sanitize_params, only: [:create, :update]
 
   # GET /providers
   # GET /providers.json
@@ -12,25 +13,46 @@ class ProvidersController < ApplicationController
   # GET /providers/1
   # GET /providers/1.json
   def show
+    @rate_avg = Rate.where(rateable_id: 1, rateable_type: "Provider").average(:stars).to_f.round
+    @feedbacks = @provider.feedbacks
   end
 
   # GET /providers/new
   def new
     @provider = Provider.new
     @categories = Category.all
+    @provider.build_address
+# binding.pry
+    # if current_user.provider.id?
+    #   render :edit
+    # end
   end
 
   # GET /providers/1/edit
   def edit
   end
 
+  def feedback
+    @feedback = Feedback.new(feedback_params)
+    if @feedback.save!
+      format.html { redirect_to :back, notice: 'Feedback was successfully Submitted.' }
+    else
+      format.html { redirect_to :back, error: 'Something Went Wrong! Try Again After Sometime' }
+    end
+  end
+
   # POST /providers
   # POST /providers.json
   def create
     @provider = Provider.new(provider_params)
-
+    @provider.build_address(params[:provider][:address_attributes])
     respond_to do |format|
       if @provider.save
+        if !params[:provider][:skill_ids].blank?
+          Skill.where(id: params[:provider][:skill_ids]).each do |skill|
+            @provider.skills << skill
+          end
+        end
         format.html { redirect_to @provider, notice: 'Provider was successfully created.' }
         format.json { render :show, status: :created, location: @provider }
       else
@@ -69,9 +91,18 @@ class ProvidersController < ApplicationController
     def set_provider
       @provider = Provider.find(params[:id])
     end
-
+    def sanitize_params
+      params[:provider][:user_id] = current_user.id
+      params[:provider][:address_attributes][:user_id] = current_user.id
+      params[:provider][:skill_ids] = params[:provider][:skill_ids].reject(&:empty?)
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def provider_params
-      params.fetch(:provider, {}).permit(:title, :description, :notice_period, :category_id, :work_time_preference, :work_day_preference, :portfolio_website)
+      # params[:provider][:user_id] = current_user.id
+      params[:provider].permit!
+      # params.fetch(:provider, {}).permit(:title, :description, :notice_period, :category_id, :work_time_preference, :work_day_preference, :portfolio_website)
+    end
+    def feedback_params
+      params.permit!(:provider_id, :description)
     end
 end

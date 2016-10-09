@@ -67,9 +67,15 @@ class EnquiriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 	def report
 		redirect_to :back, notice: 'Enquiry was successfully reported.'
 	end
+
+  def looking_for_work
+    @enquiries = !current_user.provider.nil? ? Enquiry.where(category_id: current_user.provider.category.id) : []
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_enquiry

@@ -31,7 +31,7 @@
       <li class="">
         <a href="javascript:;">
           <i class="fa fa-question"></i>
-          <span class="title">Enquiries</span>
+          <span class="title">My Enquiries</span>
           <span class="arrow "></span><!-- <span class="label label-accent">HOT</span> -->
         </a>
         <ul class="sub-menu">
@@ -44,7 +44,7 @@
       <li class="">
         <a href="javascript:;">
           <i class="fa fa-reply-all"></i>
-          <span class="title">Replies</span>
+          <span class="title">My Replies</span>
           <span class="arrow "></span><!-- <span class="label label-accent">HOT</span> -->
         </a>
         <ul class="sub-menu">
@@ -55,33 +55,33 @@
         </ul>
       </li>
       <li class="">
-        <a href="javascript:;">
-          <i class="fa fa-navicon"></i>
-          <span class="title">Categories</span>
-          <span class="arrow "></span><!-- <span class="label label-accent">HOT</span> -->
-        </a>
-        <ul class="sub-menu">
-          <li>
-           <%= link_to 'List Categories', categories_path %>
-         </li>
-        </ul>
+        <%= link_to looking_for_work_enquiries_path do %>
+          <i class="fa fa-truck"></i>
+          <span class="title">Looking For Work</span>
+        <% end %>
       </li>
-      <% if current_user.provider? || current_user.admin? %>
+      <% if current_user.service_provider? %>
+      <li class="">
+        <%= link_to new_provider_path do %>
+          <i class="fa fa-wrench"></i>
+          <span class="title">Update Profile</span>
+        <% end %>
+      </li>
+      <% end %>
+      <% if current_user.admin? %>
       <li class="">
         <a href="javascript:;">
-          <i class="fa fa-suitcase"></i>
+          <i class="fa fa-cogs"></i>
           <span class="title">Providers</span>
           <span class="arrow "></span><!-- <span class="label label-accent">HOT</span> -->
         </a>
         <ul class="sub-menu">
           <li>
            <%= link_to 'Index', providers_path %>
-           <%= link_to 'Add', new_provider_path %>
+           <%= link_to 'Update Profile', new_provider_path %>
          </li>
         </ul>
       </li>
-      <% end %>
-      <% if current_user.admin? %>
       <li class="">
         <a href="javascript:;">
           <i class="fa fa-suitcase"></i>

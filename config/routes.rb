@@ -2,11 +2,18 @@ Rails.application.routes.draw do
 
 
   resources :categories
-  resources :providers
+  resources :providers do
+    collection do
+      post :feedback
+    end
+	end
   resources :enquiries do
-	   member do
-       get :report
-     end
+    collection do
+      get :looking_for_work
+    end
+    member do
+     get :report
+    end
 	end
   resources :replies
   resources :skills
@@ -36,10 +43,10 @@ Rails.application.routes.draw do
   #   collection do
   #     get :search
   #   end
-    
+
   # end
-    
-  
+
+
   root to: "enquiries#index"
-  
+
 end

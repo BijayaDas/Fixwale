@@ -1,136 +1,196 @@
-
 <!-- START CONTAINER -->
 <div class="page-container row-fluid container-fluid">
 
-  <!-- SIDEBAR - START -->
+    <!-- SIDEBAR - START -->
     <%= render 'layouts/sidebar' %>
-  <!--  SIDEBAR - END -->
+    <!--  SIDEBAR - END -->
     <!-- START CONTENT -->
-<section id="main-content" class=" ">
-    <section class="wrapper main-wrapper row" style=''>
-
-    <div class='col-xs-12'>
-        <div class="page-title">
-
-            <div class="pull-left">
-                <h1 class="title">Course Info</h1>                            </div>
-
-                            <div class="pull-right hidden-xs">
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="#"><i class="fa fa-home"></i>Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Courses</a>
-                        </li>
-                        <li class="active">
-                            <strong>Course Info</strong>
-                        </li>
-                    </ol>
+    <section id="main-content" class=" ">
+        <section class="wrapper main-wrapper row" style=''>
+            <div class='col-xs-12'>
+                <div class="page-title">
+                    <div class="pull-left">
+                        <h1 class="title">Service Provider Profile</h1>
+                    </div>
+                    <div class="pull-right hidden-xs">
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="index.html">
+                                    <i class="fa fa-home"></i>Home</a>
+                            </li>
+                            <li>
+                                <a href="blo-users.html">Provider</a>
+                            </li>
+                            <li class="active">
+                                <strong>Profile</strong>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
-                                
-        </div>
-    </div>
-    <div class="clearfix"></div>
-    
-
-<div class="col-lg-12">
-    <section class="box nobox ">
-                <div class="content-body">    <div class="row">
-        <div class="col-md-3 col-sm-4 col-xs-12">
-            <div class="uprofile-image">
-                <img src="/assets/data/courses/course-1.jpg" class="img-responsive">
             </div>
-            <div class="uprofile-name">
-                <h3>
-                    <a href="#">Web Designing</a>
-                    <!-- Available statuses: online, idle, busy, away and offline -->
-                    <span class="uprofile-status online"></span>
-                </h3>
-                <p class="uprofile-title">Computer Engg.</p>
+            <div class="clearfix"></div>
+            <div class="col-lg-12">
+                <section class="box nobox ">
+                    <div class="content-body">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="uprofile-image">
+                                    <img src="/assets/data/courses/course-1.jpg" class="img-responsive">
+                                </div>
+                                <div class="uprofile-name">
+                                    <h3>
+                                        <a href="#"><%= current_user.first_name%></a>
+                                        <!-- Available statuses: online, idle, busy, away and offline -->
+                                        <!-- <span class="uprofile-status online"></span> -->
+                                    </h3>
+                                    <p class="uprofile-title"><%= %></p>
+                                </div>
+                                <p class='text-center'><%= %></p>
+                                <div class="uprofile-info">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <i class='fa fa-home'> <strong>Address</strong></i>
+                                            <% @provider.address.slice(:city, :state, :country, :pincode, :mobile).each do |key, value| %>
+                                            <p> <strong> <%= key %></strong> : <%= value %></p>
+                                            <% end %>
+                                          </li>
+
+                                    </ul>
+                                </div>
+                                <div class="uprofile-buttons">
+                                    <a class="btn btn-md btn-primary">Send Message</a>
+                                    <a class="btn btn-md btn-primary">Add as Friend</a>
+                                </div>
+                                <div class="uprofile-buttons">
+                                  <h5>Reviews</h5>
+                                  <% if !@rate_avg.nil? %>
+                                    <% @rate_avg.times do |t| %>
+                                      <span class="star active"></span>
+                                    <% end %>
+                                  <% else %>
+                                      <p>No Reviews</p>
+                                  <% end %>
+                                </div>
+                                <div class=" uprofile-social">
+                                    <a href="#" class="btn btn-primary btn-md facebook">
+                                        <i class="fa fa-facebook icon-xs"></i>
+                                    </a>
+                                    <!-- <a href="#" class="btn btn-primary btn-md twitter">
+                                        <i class="fa fa-twitter icon-xs"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-primary btn-md google-plus">
+                                        <i class="fa fa-google-plus icon-xs"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-primary btn-md dribbble">
+                                        <i class="fa fa-dribbble icon-xs"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-sm-8 col-xs-12">
+                                <div class="uprofile-content">
+                                    <div class="">
+                                        <p><strong>Category:</strong>
+                                            <%= @provider.category.title %>
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <h4>Biography:</h4>
+                                        <p>
+                                            <%= @provider.title %>
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <h4>Dsecription:</h4>
+                                        <p>
+                                            <%= @provider.description %>
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <span>
+                                          <strong>Notice Period:</strong>
+                                          <span class="label label-warning"><i class="fa fa-clock-o"></i>
+                                            <%= @provider.notice_period %>
+                                           </span>
+                                        </span>
+                                        <span style="margin: 0 20px 0 25px;">  |  </span>
+                                        <span>
+                                          <strong>Status:</strong>
+                                          <%=  @provider.deleted_at.nil? ? '<span class="label label-info"><i class="fa fa-thumbs-up"></i> Active </span>'.html_safe : '<span class="label label-danger"><i class="fa fa-times"></i> Deactivate</span>'.html_safe %>
+                                        </span>
+                                    </div>
+                                    <div class="">
+                                        <p>
+                                          <strong>Work Time Preference:</strong>
+                                            <%= @provider.work_time_preference %>
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <h4>Skills:</h4>
+                                        <% @provider.skills.uniq.each do |skill| %>
+                                            <span class="uilabels text-lg">
+                                                    <span class="label label-success"><i class="fa fa-rocket"></i> <%= skill.title %></span>
+                                                </span>
+                                        <% end %>
+                                    </div>
+                                    <div class="">
+                                        <h4>Feedback:</h4>
+                                        <p>Communication  : <%= rating_for @provider, 'communication' %></p>
+                                        <p>Attitude  : <%= rating_for @provider, 'attitude' %></p>
+                                        <p>Efficiency : <%= rating_for @provider, 'efficiency' %></p>
+                                        <p>Punctuality  : <%= rating_for @provider, 'punctuality' %></p>
+                                        <p>Price  : <%= rating_for @provider, 'price' %></p>
+                                    </div>
+                                    <div class="enter_post col-xs-12">
+                                      <% if current_user  %>
+                                          <% if @feedbacks.where(user_id: current_user.id).blank?   %>
+                                              <%= form_tag(feedback_providers_path, remote: true) do %>
+                                                <%= hidden_field_tag :provider_id, @provider.id %>
+                                                <div class="form-group">
+                                                  <div class="controls">
+                                                    <%= text_area_tag :description, nil, class: "form-control autogrow", placeholder: "What's on your mind?" %>
+                                                  </div>
+                                                </div>
+                                                <div class="enter_post_btns col-xs-12">
+                                                   <%= submit_tag "SUBMIT", class: "btn btn-md pull-right btn-primary" %>
+                                                </div>
+                                              <% end %>
+                                          <% end %>
+                                      <% end %>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <% if @provider.feedbacks.any? %>
+                                      <div class="uprofile_wall_posts col-xs-12">
+                                        <div class="pic-wrapper col-xs-2 col-sm-1 text-center">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                          <div class="info-wrapper col-xs-10 col-sm-11">
+                                              <div class="username">
+                                                  <span class="bold">John Smith</span>
+                                                  post in group
+                                                  <span class="bold">work</span>
+                                              </div>
+                                              <div class="info text-muted">
+                                                  "Balance" is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance.
+                                              </div>
+                                              <div class="info-details">
+                                                  <ul class="list-unstyled list-inline">
+                                                      <li>
+                                                          <a href="#" class="text-muted">15 Minutes ago</a>
+                                                      </li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                    </div>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-                                    <div class="uprofile-info">
-                <ul class="list-unstyled">
-                    <li><i class='fa fa-home'></i> New York, USA</li>
-                    <li><i class='fa fa-user'></i> 340 Contacts</li>
-                </ul>
-            </div>
-                                    <div class="uprofile-buttons">
-                <a class="btn btn-md btn-primary">Send Message</a>
-                <a class="btn btn-md btn-primary">Add as Friend</a>
-            </div>
-                                    
-                        <div class=" uprofile-social">
-                            <a href="#" class="btn btn-primary btn-md facebook"><i class="fa fa-facebook icon-xs"></i></a>
-                <a href="#" class="btn btn-primary btn-md twitter"><i class="fa fa-twitter icon-xs"></i></a>
-                <a href="#" class="btn btn-primary btn-md google-plus"><i class="fa fa-google-plus icon-xs"></i></a>
-                <a href="#" class="btn btn-primary btn-md dribbble"><i class="fa fa-dribbble icon-xs"></i></a>
-                        </div> 
-
-        </div>
-        <div class="col-md-9 col-sm-8 col-xs-12">
-
-            <div class="uprofile-content">
-
-<div class="">
-                            <h4>Biography:</h4>
-                            <p>Education is free in Brunei Darussalam not limited to government educational institutions but private educational institutions too. There are mainly two types of educational institutions namely government or public as well as private institutions. Several stages have to be undergone by the prospective students leading to higher qualifications such as Bachelors Degree.</p>
-                            <ul>
-                                <li>Primary School (Year 1 to 6)</li>
-                                <li>Secondary School (Year 7 to 11)</li>
-                                <li>High School [or also known as the Sixth Form Centers] (Year 12 to 13)</li>
-                                <li>Colleges (Pre-University to Diploma)</li>
-                                <li>University Level (Undergraduate, Postgraduate and Professional)</li>
-                            </ul>
-                            <p>It takes six and five years to complete the primary and secondary levels respectively. Upon completing these two crucial stages, students have freedom to progress to sixth-form centers, colleges or probably straight to employment. Ahead of times, these students will be led to undertake the university level programs in both, government and private university colleges.</p>
-                            <p>Education is free in Brunei Darussalam not limited to government educational institutions but private educational institutions too. There are mainly two types of educational institutions namely government or public as well as private institutions. Several stages have to be undergone by the prospective students leading to higher qualifications such as Bachelors Degree.</p>
-                            <ul>
-                                <li>Primary School (Year 1 to 6)</li>
-                                <li>Secondary School (Year 7 to 11)</li>
-                                <li>High School [or also known as the Sixth Form Centers] (Year 12 to 13)</li>
-                                <li>Colleges (Pre-University to Diploma)</li>
-                                <li>University Level (Undergraduate, Postgraduate and Professional)</li>
-                            </ul>
-                            <p>It takes six and five years to complete the primary and secondary levels respectively. Upon completing these two crucial stages, students have freedom to progress to sixth-form centers, colleges or probably straight to employment. Ahead of times, these students will be led to undertake the university level programs in both, government and private university colleges.</p>
-                            <div class="clearfix"></div>
-                            <hr>
-                            <h4>Subjects:</h4>
-                            <ul>
-                                <li>Integer tincidunt.</li>
-                                <li>Praesent vestibulum dapibus nibh.</li>
-                                <li> Phasellus consectetuer vestibulum elit.</li>
-                                <li>M.B.B.S from Ski University</li>
-                                <li>Praesent vestibulum dapibus nibh.</li>
-                                <li>Proin pretium, leo ac pellentesque mollis justo.</li>
-                                <li>unc ultrices eros, sed gravida augue augue</li>
-                            </ul>
-                            <div class="clearfix"></div>
-                            <hr>
-                            <div class="clearfix"></div>
-                        </div>                
-
-            </div>
-
-
-
-
-
-
-
-
-
-        </div>
-    </div>
-    </div>
-        </section></div>
-
-
-    </section>
+        </section>
     </section>
     <!-- END CONTENT -->
-   </div>
-    <!-- END CONTAINER -->
+</div>
+<!-- END CONTAINER -->
 <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
-
-
-

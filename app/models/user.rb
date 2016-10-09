@@ -1,10 +1,10 @@
 class User < ApplicationRecord
-  enum role: [:recruiter, :provider]
+  enum role: [:recruiter, :service_provider]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
-         
+
   has_many :authorizations
   has_many :enquiries, dependent: :destroy
   has_one :provider, dependent: :destroy
@@ -51,5 +51,5 @@ class User < ApplicationRecord
   end
 
 
- 
+
 end

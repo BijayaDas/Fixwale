@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
- 
+
 
 
   def configure_permitted_parameters
@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def service_provider_only
-    unless current_user.provider? || current_user.admin?
+  def provider_only
+    unless current_user.service_provider? || current_user.admin?
       redirect_to :root, :alert => "Access denied."
     end
   end

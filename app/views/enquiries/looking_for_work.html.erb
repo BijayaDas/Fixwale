@@ -1,0 +1,89 @@
+<!-- START CONTAINER -->
+<div class="page-container row-fluid container-fluid">
+  <!-- SIDEBAR - START -->
+  <%= render 'layouts/sidebar' %>
+  <!--  SIDEBAR - END -->
+  <!-- START CONTENT -->
+  <section id="main-content" class=" ">
+    <section class="wrapper main-wrapper row" style=''>
+      <div class='col-xs-12'>
+        <div class="page-title">
+          <div class="pull-left">
+            <h1 class="title">Enquiries</h1> </div>
+          <div class="pull-right hidden-xs">
+            <ol class="breadcrumb">
+              <li>
+                <a href="#"><i class="fa fa-home"></i>Home</a>
+              </li>
+              <li>
+                <a href="#">Enquiries</a>
+              </li>
+              <li class="active">
+                <strong>All Enquiries</strong>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-lg-12">
+        <section class="box ">
+          <header class="panel_header">
+            <h2 class="title pull-left">All Enquiries</h2>
+            <div class="panel_actions pull-right">
+              <%= link_to '<i class="fa fa-plus"></i> Add Enquiry'.html_safe, new_enquiry_path, class: "btn btn-success" %>
+            </div>
+          </header>
+          <div class="content-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <!-- ********************************************** -->
+                <table id="example" class="display table table-hover table-condensed">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>TITLE</th>
+<!--                      <th>DESCRIPTION</th>-->
+<!--                      <th>MOBILE</th>-->
+<!--                      <th>EMAIL</th>-->
+<!--                      <th>CONTACTS</th>-->
+                      <th>MAX_APPLICATION</th>
+                      <th>CATEGORY</th>
+                      <th>POSTED BY</th>
+                      <th>STATUS</th>
+                      <th>ACTIONS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <% @enquiries.each do |enquiry| %>
+                    <tr>
+                      <td><%= enquiry.id %></td>
+                      <td><%= enquiry.title %></td>
+<!--                      <td><%#= enquiry.job_description %></td>-->
+<!--                      <td><%#= enquiry.mobile %></td>-->
+<!--                      <td><%#= enquiry.email %></td>-->
+<!--                      <td><%#= enquiry.contact_details %></td>-->
+                      <td><%= enquiry.max_applications %></td>
+                      <td><%= enquiry.category.title %></td>
+                      <td><%= enquiry.user.full_name() rescue nil %></td>
+                      <td><%= enquiry.status rescue nil %></td>
+                      <td>
+                        <%= link_to 'Show', enquiry, class: "btn btn-info" %>
+                        <%= link_to 'Edit', edit_enquiry_path(enquiry), class: "btn btn-primary" %>
+                        <%= link_to 'Destroy', enquiry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                      </td>
+                    </tr>
+                  <% end %>
+
+                  </tbody>
+                </table>
+                <!-- ********************************************** -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </section>
+  <!-- END CONTENT -->
+</div>

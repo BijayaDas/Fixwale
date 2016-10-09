@@ -7,8 +7,9 @@ class RepliesController < ApplicationController
   def index
     if current_user.admin?
       @replies = Reply.all
-    elsif current_user.provider?
-      @replies = Reply.where(user_id: current_user.id)
+    elsif current_user.service_provider?
+      # binding.pry
+      @replies = Reply.where(provider_id: current_user.provider.id) rescue []
     elsif current_user.recruiter?
       @replies = Reply.where(enquiry_id: current_user.enquiries.ids)
     end

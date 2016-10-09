@@ -31,3 +31,6 @@
 //= require plugins/multi-select/js/jquery.quicksearch
 
 //= require themes/scripts
+
+//= require jquery.raty
+//= require ratyrate

@@ -34,7 +34,8 @@
         <li class="profile">
           <% if current_user %>
             <a href="#" data-toggle="dropdown" class="toggle">
-              <%= image_tag('data/profile/profile.jpg', :alt=>"user-image", :class=>"img-circle img-inline") %>
+              <i class="fa fa-user"></i>
+              <%#= image_tag('data/profile/profile.jpg', :alt=>"user-image", :class=>"img-circle img-inline") %>
               <span><%= current_user.full_name() %> <i class="fa fa-angle-down"></i></span>
             </a>
             <ul class="dropdown-menu profile animated fadeIn">
