@@ -3,6 +3,7 @@ class ProvidersController < ApplicationController
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
   before_action :provider_only, only: [:index, :new, :edit, :create, :update, :destroy]
   before_action :sanitize_params, only: [:create, :update]
+  before_action :sanitize_feedback_params, only: [:feedback]
 
   # GET /providers
   # GET /providers.json
@@ -22,10 +23,9 @@ class ProvidersController < ApplicationController
     @provider = Provider.new
     @categories = Category.all
     @provider.build_address
-# binding.pry
-    # if current_user.provider.id?
-    #   render :edit
-    # end
+    if current_user.provider.present?
+      redirect_to edit_provider_path(current_user.provider)
+    end
   end
 
   # GET /providers/1/edit
@@ -103,6 +103,12 @@ class ProvidersController < ApplicationController
       # params.fetch(:provider, {}).permit(:title, :description, :notice_period, :category_id, :work_time_preference, :work_day_preference, :portfolio_website)
     end
     def feedback_params
-      params.permit!(:provider_id, :description)
+      params.require(:feedback_attr).permit!
+    end
+    def sanitize_feedback_params
+       params[:feedback_attr] = {}
+       params[:feedback_attr][:provider_id] = params[:provider_id].to_i
+       params[:feedback_attr][:description] = params[:description]
+       params[:feedback_attr][:user_id] = current_user.id
     end
 end
