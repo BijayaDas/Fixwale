@@ -1,0 +1,47 @@
+<%= form_for(pre_varified_resource) do |f| %>
+  <% if pre_varified_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pre_varified_resource.errors.count, "error") %> prohibited this pre_varified_resource from being saved:</h2>
+
+      <ul>
+      <% pre_varified_resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :expert_level %>
+    <%= f.number_field :expert_level %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skill_sets %>
+    <%= f.text_field :skill_sets %>
+  </div>
+
+  <div class="field">
+    <%= f.label :years_experience %>
+    <%= f.text_field :years_experience %>
+  </div>
+
+  <div class="field">
+    <%= f.label :designation %>
+    <%= f.text_field :designation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :budget %>
+    <%= f.number_field :budget %>
+  </div>
+
+  <div class="field">
+    <%= f.label :need_before %>
+    <%= f.text_field :need_before %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

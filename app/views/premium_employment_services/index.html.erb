@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Premium Employment Services</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attempts limit</th>
+      <th>Current attempt</th>
+      <th>Placed</th>
+      <th>Placed in</th>
+      <th>Paid ammount</th>
+      <th>Offered ctc</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @premium_employment_services.each do |premium_employment_service| %>
+      <tr>
+        <td><%= premium_employment_service.attempts_limit %></td>
+        <td><%= premium_employment_service.current_attempt %></td>
+        <td><%= premium_employment_service.placed %></td>
+        <td><%= premium_employment_service.placed_in %></td>
+        <td><%= premium_employment_service.paid_ammount %></td>
+        <td><%= premium_employment_service.offered_ctc %></td>
+        <td><%= premium_employment_service.active %></td>
+        <td><%= link_to 'Show', premium_employment_service %></td>
+        <td><%= link_to 'Edit', edit_premium_employment_service_path(premium_employment_service) %></td>
+        <td><%= link_to 'Destroy', premium_employment_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Premium Employment Service', new_premium_employment_service_path %>

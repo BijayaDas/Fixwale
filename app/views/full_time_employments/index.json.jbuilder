@@ -1,0 +1,1 @@
+json.array! @full_time_employments, partial: 'full_time_employments/full_time_employment', as: :full_time_employment

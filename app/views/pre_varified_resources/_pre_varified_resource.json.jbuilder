@@ -1,0 +1,2 @@
+json.extract! pre_varified_resource, :id, :expert_level, :skill_sets, :years_experience, :designation, :budget, :need_before, :created_at, :updated_at
+json.url pre_varified_resource_url(pre_varified_resource, format: :json)

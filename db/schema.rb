@@ -68,14 +68,14 @@ ActiveRecord::Schema.define(version: 20161009190733) do
     t.text     "job_description"
     t.string   "mobile"
     t.string   "email"
-    t.text     "contact_details"
-    t.integer  "max_applications"
     t.string   "deadline"
+    t.text     "contact_details"
+    t.string   "max_applications"
+    t.integer  "status",           limit: 2, default: 0
     t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "status",           default: 0
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.datetime "deleted_at"
     t.index ["category_id"], name: "index_enquiries_on_category_id", using: :btree
     t.index ["deleted_at"], name: "index_enquiries_on_deleted_at", using: :btree
@@ -90,18 +90,6 @@ ActiveRecord::Schema.define(version: 20161009190733) do
     t.datetime "updated_at",  null: false
     t.index ["provider_id"], name: "index_feedbacks_on_provider_id", using: :btree
     t.index ["user_id"], name: "index_feedbacks_on_user_id", using: :btree
-  end
-
-  create_table "languages", force: :cascade do |t|
-    t.integer  "title"
-    t.boolean  "read"
-    t.boolean  "write"
-    t.boolean  "speak"
-    t.integer  "fluency_level", limit: 2, default: 0
-    t.integer  "provider_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["provider_id"], name: "index_languages_on_provider_id", using: :btree
   end
 
   create_table "messages", force: :cascade do |t|
@@ -140,11 +128,11 @@ ActiveRecord::Schema.define(version: 20161009190733) do
     t.string   "attached_resume"
     t.string   "portfolio_website"
     t.string   "linkedin_url"
+    t.integer  "actively_looking",     limit: 2
     t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.integer  "status"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.datetime "deleted_at"
     t.index ["category_id"], name: "index_providers_on_category_id", using: :btree
     t.index ["deleted_at"], name: "index_providers_on_deleted_at", using: :btree

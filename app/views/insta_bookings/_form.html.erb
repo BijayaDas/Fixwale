@@ -1,0 +1,57 @@
+<%= form_for(insta_booking) do |f| %>
+  <% if insta_booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(insta_booking.errors.count, "error") %> prohibited this insta_booking from being saved:</h2>
+
+      <ul>
+      <% insta_booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= f.number_field :category_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time %>
+    <%= f.text_field :time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hours %>
+    <%= f.number_field :hours %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payment_due %>
+    <%= f.number_field :payment_due %>
+  </div>
+
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

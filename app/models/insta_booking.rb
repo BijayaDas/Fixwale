@@ -1,0 +1,2 @@
+class InstaBooking < ApplicationRecord
+end

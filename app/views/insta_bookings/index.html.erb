@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Insta Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Hours</th>
+      <th>Payment due</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @insta_bookings.each do |insta_booking| %>
+      <tr>
+        <td><%= insta_booking.user_id %></td>
+        <td><%= insta_booking.category_id %></td>
+        <td><%= insta_booking.description %></td>
+        <td><%= insta_booking.date %></td>
+        <td><%= insta_booking.time %></td>
+        <td><%= insta_booking.hours %></td>
+        <td><%= insta_booking.payment_due %></td>
+        <td><%= insta_booking.active %></td>
+        <td><%= link_to 'Show', insta_booking %></td>
+        <td><%= link_to 'Edit', edit_insta_booking_path(insta_booking) %></td>
+        <td><%= link_to 'Destroy', insta_booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Insta Booking', new_insta_booking_path %>

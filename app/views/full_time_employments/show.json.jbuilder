@@ -1,0 +1,1 @@
+json.partial! "full_time_employments/full_time_employment", full_time_employment: @full_time_employment

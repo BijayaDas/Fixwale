@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  resources :insta_bookings
+  resources :office_appointments
+  resources :premium_employment_services
+  resources :pre_varified_resources
   resources :categories
   resources :providers do
     collection do

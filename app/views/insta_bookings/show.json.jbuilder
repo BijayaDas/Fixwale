@@ -1,0 +1,1 @@
+json.partial! "insta_bookings/insta_booking", insta_booking: @insta_booking

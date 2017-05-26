@@ -1,0 +1,1 @@
+json.partial! "pre_varified_resources/pre_varified_resource", pre_varified_resource: @pre_varified_resource

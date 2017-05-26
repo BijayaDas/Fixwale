@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Attempts limit:</strong>
+  <%= @premium_employment_service.attempts_limit %>
+</p>
+
+<p>
+  <strong>Current attempt:</strong>
+  <%= @premium_employment_service.current_attempt %>
+</p>
+
+<p>
+  <strong>Placed:</strong>
+  <%= @premium_employment_service.placed %>
+</p>
+
+<p>
+  <strong>Placed in:</strong>
+  <%= @premium_employment_service.placed_in %>
+</p>
+
+<p>
+  <strong>Paid ammount:</strong>
+  <%= @premium_employment_service.paid_ammount %>
+</p>
+
+<p>
+  <strong>Offered ctc:</strong>
+  <%= @premium_employment_service.offered_ctc %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @premium_employment_service.active %>
+</p>
+
+<%= link_to 'Edit', edit_premium_employment_service_path(@premium_employment_service) %> |
+<%= link_to 'Back', premium_employment_services_path %>

@@ -1,0 +1,1 @@
+json.array! @pre_varified_resources, partial: 'pre_varified_resources/pre_varified_resource', as: :pre_varified_resource

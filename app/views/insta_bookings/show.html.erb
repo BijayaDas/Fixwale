@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @insta_booking.user_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @insta_booking.category_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @insta_booking.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @insta_booking.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @insta_booking.time %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @insta_booking.hours %>
+</p>
+
+<p>
+  <strong>Payment due:</strong>
+  <%= @insta_booking.payment_due %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @insta_booking.active %>
+</p>
+
+<%= link_to 'Edit', edit_insta_booking_path(@insta_booking) %> |
+<%= link_to 'Back', insta_bookings_path %>

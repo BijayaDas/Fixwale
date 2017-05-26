@@ -1,0 +1,1 @@
+json.array! @office_appointments, partial: 'office_appointments/office_appointment', as: :office_appointment

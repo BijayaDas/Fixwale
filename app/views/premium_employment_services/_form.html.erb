@@ -1,0 +1,52 @@
+<%= form_for(premium_employment_service) do |f| %>
+  <% if premium_employment_service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(premium_employment_service.errors.count, "error") %> prohibited this premium_employment_service from being saved:</h2>
+
+      <ul>
+      <% premium_employment_service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :attempts_limit %>
+    <%= f.number_field :attempts_limit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_attempt %>
+    <%= f.number_field :current_attempt %>
+  </div>
+
+  <div class="field">
+    <%= f.label :placed %>
+    <%= f.check_box :placed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :placed_in %>
+    <%= f.text_field :placed_in %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paid_ammount %>
+    <%= f.number_field :paid_ammount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :offered_ctc %>
+    <%= f.number_field :offered_ctc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

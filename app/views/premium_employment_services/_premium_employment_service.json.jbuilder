@@ -1,0 +1,2 @@
+json.extract! premium_employment_service, :id, :attempts_limit, :current_attempt, :placed, :placed_in, :paid_ammount, :offered_ctc, :active, :created_at, :updated_at
+json.url premium_employment_service_url(premium_employment_service, format: :json)

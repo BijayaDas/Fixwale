@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expert_level: 1
+  skill_sets: MyString
+  years_experience: MyString
+  designation: MyString
+  budget: 1
+  need_before: MyString
+
+two:
+  expert_level: 1
+  skill_sets: MyString
+  years_experience: MyString
+  designation: MyString
+  budget: 1
+  need_before: MyString

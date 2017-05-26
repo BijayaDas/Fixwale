@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Full Time Employments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @full_time_employments.each do |full_time_employment| %>
+      <tr>
+        <td><%= link_to 'Show', full_time_employment %></td>
+        <td><%= link_to 'Edit', edit_full_time_employment_path(full_time_employment) %></td>
+        <td><%= link_to 'Destroy', full_time_employment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Full Time Employment', new_full_time_employment_path %>

@@ -1,0 +1,1 @@
+json.array! @premium_employment_services, partial: 'premium_employment_services/premium_employment_service', as: :premium_employment_service

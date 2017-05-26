@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  date: 
+  time: MyString
+  hours: 1
+  payment_due: 1
+  active: false
+
+two:
+  description: MyString
+  date: 
+  time: MyString
+  hours: 1
+  payment_due: 1
+  active: false

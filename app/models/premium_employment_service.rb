@@ -1,0 +1,2 @@
+class PremiumEmploymentService < ApplicationRecord
+end

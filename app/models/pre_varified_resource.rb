@@ -1,0 +1,2 @@
+class PreVarifiedResource < ApplicationRecord
+end

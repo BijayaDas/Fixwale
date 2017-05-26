@@ -1,0 +1,2 @@
+module OfficeAppointmentsHelper
+end
