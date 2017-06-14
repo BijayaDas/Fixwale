@@ -1,0 +1,1 @@
+json.partial! "connecting_services_enquiries/connecting_services_enquiry", connecting_services_enquiry: @connecting_services_enquiry

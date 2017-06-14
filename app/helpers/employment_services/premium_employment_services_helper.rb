@@ -1,0 +1,2 @@
+module EmploymentServices::PremiumEmploymentServicesHelper
+end

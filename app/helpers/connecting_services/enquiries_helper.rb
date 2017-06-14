@@ -1,0 +1,2 @@
+module ConnectingServices::EnquiriesHelper
+end

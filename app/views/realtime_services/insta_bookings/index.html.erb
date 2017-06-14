@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Realtime Services Insta Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @realtime_services_insta_bookings.each do |realtime_services_insta_booking| %>
+      <tr>
+        <td><%= link_to 'Show', realtime_services_insta_booking %></td>
+        <td><%= link_to 'Edit', edit_realtime_services_insta_booking_path(realtime_services_insta_booking) %></td>
+        <td><%= link_to 'Destroy', realtime_services_insta_booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Realtime Services Insta Booking', new_realtime_services_insta_booking_path %>

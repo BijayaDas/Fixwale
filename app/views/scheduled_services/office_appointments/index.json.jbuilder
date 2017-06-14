@@ -1,0 +1,1 @@
+json.array! @scheduled_services_office_appointments, partial: 'scheduled_services_office_appointments/scheduled_services_office_appointment', as: :scheduled_services_office_appointment

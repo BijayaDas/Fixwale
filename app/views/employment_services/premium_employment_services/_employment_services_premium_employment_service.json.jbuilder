@@ -1,0 +1,2 @@
+json.extract! employment_services_premium_employment_service, :id, :created_at, :updated_at
+json.url employment_services_premium_employment_service_url(employment_services_premium_employment_service, format: :json)

@@ -1,0 +1,1 @@
+json.partial! "realtime_services_insta_bookings/realtime_services_insta_booking", realtime_services_insta_booking: @realtime_services_insta_booking

@@ -1,0 +1,1 @@
+json.array! @realtime_services_insta_bookings, partial: 'realtime_services_insta_bookings/realtime_services_insta_booking', as: :realtime_services_insta_booking

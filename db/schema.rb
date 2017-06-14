@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009190733) do
+ActiveRecord::Schema.define(version: 20170526053821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,11 +92,35 @@ ActiveRecord::Schema.define(version: 20161009190733) do
     t.index ["user_id"], name: "index_feedbacks_on_user_id", using: :btree
   end
 
+  create_table "insta_bookings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.string   "description"
+    t.string   "date"
+    t.string   "time"
+    t.integer  "hours"
+    t.integer  "payment_due"
+    t.boolean  "active"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string   "full_name"
     t.string   "email"
     t.string   "mobile"
     t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "office_appointments", force: :cascade do |t|
+    t.string   "description"
+    t.string   "date"
+    t.string   "time"
+    t.integer  "hours"
+    t.integer  "payment_due"
+    t.boolean  "active"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -108,6 +132,29 @@ ActiveRecord::Schema.define(version: 20161009190733) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["rateable_type", "rateable_id"], name: "index_overall_averages_on_rateable_type_and_rateable_id", using: :btree
+  end
+
+  create_table "pre_varified_resources", force: :cascade do |t|
+    t.integer  "expert_level"
+    t.string   "skill_sets"
+    t.string   "years_experience"
+    t.string   "designation"
+    t.integer  "budget"
+    t.string   "need_before"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "premium_employment_services", force: :cascade do |t|
+    t.integer  "attempts_limit"
+    t.integer  "current_attempt"
+    t.boolean  "placed"
+    t.string   "placed_in"
+    t.integer  "paid_ammount"
+    t.integer  "offered_ctc"
+    t.boolean  "active"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "prices", force: :cascade do |t|

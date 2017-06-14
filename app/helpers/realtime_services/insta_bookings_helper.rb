@@ -1,0 +1,2 @@
+module RealtimeServices::InstaBookingsHelper
+end

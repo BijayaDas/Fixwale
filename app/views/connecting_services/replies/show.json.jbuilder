@@ -1,0 +1,1 @@
+json.partial! "connecting_services_replies/connecting_services_reply", connecting_services_reply: @connecting_services_reply

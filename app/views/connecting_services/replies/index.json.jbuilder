@@ -1,0 +1,1 @@
+json.array! @connecting_services_replies, partial: 'connecting_services_replies/connecting_services_reply', as: :connecting_services_reply

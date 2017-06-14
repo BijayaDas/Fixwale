@@ -1,0 +1,17 @@
+<%= form_for(connecting_services_reply) do |f| %>
+  <% if connecting_services_reply.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(connecting_services_reply.errors.count, "error") %> prohibited this connecting_services_reply from being saved:</h2>
+
+      <ul>
+      <% connecting_services_reply.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

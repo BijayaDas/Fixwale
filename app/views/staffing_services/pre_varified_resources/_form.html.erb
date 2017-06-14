@@ -1,0 +1,17 @@
+<%= form_for(staffing_services_pre_varified_resource) do |f| %>
+  <% if staffing_services_pre_varified_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(staffing_services_pre_varified_resource.errors.count, "error") %> prohibited this staffing_services_pre_varified_resource from being saved:</h2>
+
+      <ul>
+      <% staffing_services_pre_varified_resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

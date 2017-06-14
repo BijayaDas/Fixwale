@@ -1,0 +1,1 @@
+json.partial! "scheduled_services_office_appointments/scheduled_services_office_appointment", scheduled_services_office_appointment: @scheduled_services_office_appointment

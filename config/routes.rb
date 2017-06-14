@@ -1,6 +1,36 @@
 Rails.application.routes.draw do
 
 
+  namespace :employment_services do
+    resources :premium_employment_services #elitmus or anyother emp agency
+  end
+
+  namespace :connecting_services do #urbanpro, upwork like something
+    resources :replies
+    resources :enquiries do
+      collection do
+        get :looking_for_work
+      end
+      member do
+       get :report
+      end
+    end
+  end
+
+  namespace :staffing_services do #like randstad provide staffing services as a 3rdparty to vendor
+    resources :pre_varified_resources
+  end
+  namespace :scheduled_services do #like practo
+    resources :office_appointments
+  end
+  namespace :realtime_services do #like uber provide realtime services 
+    resources :insta_bookings
+  end
+  namespace :admin do #club all admin facilities in this namespace
+    resources :skills
+    resources :categories
+  end
+
   resources :insta_bookings
   resources :office_appointments
   resources :premium_employment_services

@@ -1,0 +1,2 @@
+module ScheduledServices::OfficeAppointmentsHelper
+end

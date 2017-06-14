@@ -1,0 +1,17 @@
+<%= form_for(scheduled_services_office_appointment) do |f| %>
+  <% if scheduled_services_office_appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scheduled_services_office_appointment.errors.count, "error") %> prohibited this scheduled_services_office_appointment from being saved:</h2>
+
+      <ul>
+      <% scheduled_services_office_appointment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

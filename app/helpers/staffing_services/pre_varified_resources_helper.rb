@@ -1,0 +1,2 @@
+module StaffingServices::PreVarifiedResourcesHelper
+end

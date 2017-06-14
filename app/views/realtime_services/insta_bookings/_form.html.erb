@@ -1,0 +1,17 @@
+<%= form_for(realtime_services_insta_booking) do |f| %>
+  <% if realtime_services_insta_booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(realtime_services_insta_booking.errors.count, "error") %> prohibited this realtime_services_insta_booking from being saved:</h2>
+
+      <ul>
+      <% realtime_services_insta_booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

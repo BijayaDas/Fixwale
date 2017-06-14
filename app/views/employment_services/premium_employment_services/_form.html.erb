@@ -1,0 +1,17 @@
+<%= form_for(employment_services_premium_employment_service) do |f| %>
+  <% if employment_services_premium_employment_service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employment_services_premium_employment_service.errors.count, "error") %> prohibited this employment_services_premium_employment_service from being saved:</h2>
+
+      <ul>
+      <% employment_services_premium_employment_service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

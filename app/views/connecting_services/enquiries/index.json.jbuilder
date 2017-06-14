@@ -1,0 +1,1 @@
+json.array! @connecting_services_enquiries, partial: 'connecting_services_enquiries/connecting_services_enquiry', as: :connecting_services_enquiry
