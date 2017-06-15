@@ -53,7 +53,7 @@
                   <% @skills.each do |skill| %>
                     <tr>
                       <td><%= skill.id %></td>
-                      <td class=" col-xs-1"><%= image_tag(skill.avatar, class: "img-rounded img-responsive") %></td>
+                      <td class=" col-xs-1"><%= image_tag(skill.avatar, class: "img-rounded img-responsive") rescue ''%></td>
                       <td><%= skill.title %></td>
                       <td><%= skill.description %></td>
                       <td><%= skill.hash_tag rescue "NA" %></td>

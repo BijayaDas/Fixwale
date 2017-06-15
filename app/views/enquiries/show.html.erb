@@ -31,14 +31,13 @@
         <section class="box nobox ">
           <div class="content-body">
             <div class="row">
-              <div class="col-md-3 col-sm-4 col-xs-12">
+             <!--  <div class="col-md-3 col-sm-4 col-xs-12">
                 <div class="uprofile-image">
                   <img src="/assets/data/courses/course-1.jpg" class="img-responsive">
                 </div>
                 <div class="uprofile-name">
                   <h3>
                     <a href="#"><%= @enquiry.user.full_name %></a>
-                    <!-- Available statuses: online, idle, busy, away and offline -->
                     <span class="uprofile-status online"></span>
                   </h3>
                   <p class="uprofile-title">Mob: <%= @enquiry.mobile %></p>
@@ -46,22 +45,15 @@
                 </div>
                 <div class="uprofile-info">
                   <%= @enquiry.contact_details %>
-                  <!--
-                    <ul class="list-unstyled">
-                      <li><i class='fa fa-home'></i> New York, USA</li>
-                      <li><i class='fa fa-user'></i> 340 Contacts</li>
-                    </ul>
-                    -->
                 </div>
                 <% unless @enquiry.enquiry_owner(current_user) %>
                   <div class="uprofile-buttons">
                    <%= link_to "Apply", new_reply_path(job_id: @enquiry.id), class: "btn btn-md btn-primary" %>
                    <%= link_to "Report", report_enquiry_path(@enquiry), class: "btn btn-md btn-danger" %>
-                   <!-- <a class="btn btn-md btn-primary">Add as Friend</a>-->
                   </div>
                 <% end %>
-              </div>
-              <div class="col-md-9 col-sm-8 col-xs-12">
+              </div> -->
+              <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="uprofile-content">
                   <div class="">
                     <h4> <%= @enquiry.title %></h4>
