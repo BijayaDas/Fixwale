@@ -44,6 +44,9 @@
                   <i class="fa fa-info"></i> Help
                 </a>
               </li>
+              <li>
+                   <%= link_to '<i class="fa fa-info"></i>About'.html_safe, page_path('about') %>
+              </li>
                 <% if !current_user.provider.nil?%>
                   <li>
                     <%= link_to edit_provider_path(current_user.provider.id) do  %>
