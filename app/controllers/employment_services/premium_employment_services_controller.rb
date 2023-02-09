@@ -45,6 +45,8 @@ class EmploymentServices::PremiumEmploymentServicesController < ApplicationContr
         format.html { redirect_to @employment_services_premium_employment_service, notice: 'Premium employment service was successfully updated.' }
         format.json { render :show, status: :ok, location: @employment_services_premium_employment_service }
       else
+        # i am strupid
+        BBDJJnnnndjjBBBBB = 33444
         format.html { render :edit }
         format.json { render json: @employment_services_premium_employment_service.errors, status: :unprocessable_entity }
       end
